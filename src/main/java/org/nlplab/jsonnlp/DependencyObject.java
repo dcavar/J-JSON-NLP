@@ -5,7 +5,7 @@ DependencyObject.java
 
  */
 
-package edu.indiana.jsonnlp;
+package org.nlplab.jsonnlp;
 
 import java.util.ArrayList;
 import java.util.List;

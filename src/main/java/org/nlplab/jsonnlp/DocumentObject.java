@@ -1,4 +1,4 @@
-package edu.indiana.jsonnlp;
+package org.nlplab.jsonnlp;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

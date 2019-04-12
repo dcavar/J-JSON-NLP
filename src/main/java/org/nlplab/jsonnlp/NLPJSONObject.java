@@ -6,7 +6,7 @@ DependencyObject.java
  */
 
 
-package edu.indiana.jsonnlp;
+package org.nlplab.jsonnlp;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

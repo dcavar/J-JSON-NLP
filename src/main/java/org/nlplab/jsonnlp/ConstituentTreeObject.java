@@ -1,4 +1,4 @@
-package edu.indiana.jsonnlp;
+package org.nlplab.jsonnlp;
 
 public class ConstituentTreeObject {
 	private String sentId = "";

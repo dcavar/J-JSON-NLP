@@ -1,21 +1,23 @@
-package edu.indiana.jsonnlp;
+package org.nlplab.jsonnlp;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParagraphObject {
-	private Integer id = -1;
+public class SentenceObject {
+	private String id = "";
 	private String text = "";
 	private Integer tokenFrom = -1;
 	private Integer tokenTo = -1;
 	private String sentiment = "";
+	private Boolean complex = false;
+	private String type = "";
 	private List<EmbeddingObject> embeddings = new ArrayList<>();
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -49,6 +51,22 @@ public class ParagraphObject {
 
 	public void setSentiment(String sentiment) {
 		this.sentiment = sentiment;
+	}
+
+	public Boolean getComplex() {
+		return complex;
+	}
+
+	public void setComplex(Boolean complex) {
+		this.complex = complex;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public List<EmbeddingObject> getEmbeddings() {
