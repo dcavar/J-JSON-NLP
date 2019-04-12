@@ -1,6 +1,6 @@
 # J-JSON-NLP
 
-(C) [Damir Cavar], Umang Mehta, ...
+(C) [Damir Cavar], Umang Mehta, Aarushi Bisht, Jagpreet Chawla, ...
 
 Java JSON-NLP Maven module and validator.
 
