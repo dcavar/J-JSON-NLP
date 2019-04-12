@@ -1,10 +1,11 @@
-package edu.indiana.nlpjson;
+package edu.indiana.jsonnlp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmbeddingObject {
-	private List<Number> vector;
-	private String model;
+	private List<Number> vector = new ArrayList<>();
+	private String model = "";
 
 	public List<Number> getVector() {
 		return vector;

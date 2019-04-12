@@ -1,8 +1,8 @@
-package edu.indiana.nlpjson;
+package edu.indiana.jsonnlp;
 
 public class ConstituentTreeObject {
-	private String sentId;
-	private String labelledBracketing;
+	private String sentId = "";
+	private String labelledBracketing = "";
 
 	public String getSentId() {
 		return sentId;

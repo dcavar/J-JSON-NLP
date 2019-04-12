@@ -1,25 +1,26 @@
-package edu.indiana.nlpjson;
+package edu.indiana.jsonnlp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TokenObject {
-	private Integer id;
-	private String word;
-	private String lemma;
-	private Integer characterOffsetBegin;
-	private Integer characterOffsetEnd;
-	private String POS;
-	private String NER;
-	private String speaker;
+	private Integer id = -1;
+	private String word = "";
+	private String lemma = "";
+	private Integer characterOffsetBegin = -1;
+	private Integer characterOffsetEnd = -1;
+	private String POS = "";
+	private String NER = "";
+	private String speaker = "";
 	private Boolean foreign = false;
-	private String language;
+	private String language = "";
 	private Boolean overt = false;
-	private List<String> synonyms;
-	private List<String> hypernyms;
-	private List<String> hyponyms;
-	private List<EmbeddingObject> embeddings;
-	private List<List<Number>> characterEmbeddings;
-	private String sentiment;
+	private List<String> synonyms = new ArrayList<>();
+	private List<String> hypernyms = new ArrayList<>();
+	private List<String> hyponyms = new ArrayList<>();
+	private List<EmbeddingObject> embeddings = new ArrayList<>();
+	private List<List<Number>> characterEmbeddings = new ArrayList<>();
+	private String sentiment = "";
 
 	public Integer getId() {
 		return id;

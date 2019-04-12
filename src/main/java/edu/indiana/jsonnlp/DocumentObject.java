@@ -1,4 +1,4 @@
-package edu.indiana.nlpjson;
+package edu.indiana.jsonnlp;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -8,16 +8,16 @@ import java.util.List;
 import java.util.Map;
 
 public class DocumentObject {
-	private String text;
-	private List<TokenObject> tokenList;
-	private List<ParagraphObject> paragraphs;
-	private List<SentenceObject> sentences;
+	private String text = "";
+	private List<TokenObject> tokenList = new ArrayList<>();
+	private List<ParagraphObject> paragraphs = new ArrayList<>();
+	private List<SentenceObject> sentences = new ArrayList<>();
 	// TODO: More JSON elements from the schema
 	@JsonIgnore
-	private Map<String, DependencyTreeObject> dependencyTreeMap;
-	private List<DependencyTreeObject> dependencyTrees;
-	private List<CoreferenceObject> coreferences;
-	private List<ConstituentTreeObject> constituents;
+	private Map<String, DependencyTreeObject> dependencyTreeMap = new HashMap<>();
+	private List<DependencyTreeObject> dependencyTrees = new ArrayList<>();
+	private List<CoreferenceObject> coreferences = new ArrayList<>();
+	private List<ConstituentTreeObject> constituents = new ArrayList<>();
 
 	public DocumentObject() {
 		super();
@@ -26,11 +26,6 @@ public class DocumentObject {
 	public DocumentObject(String text) {
 		super();
 		this.text = text;
-		this.tokenList = new ArrayList<>();
-		this.sentences = new ArrayList<>();
-		this.dependencyTreeMap = new HashMap<>();
-		this.coreferences = new ArrayList<>();
-		this.constituents = new ArrayList<>();
 	}
 
 	public List<TokenObject> getTokenList() {

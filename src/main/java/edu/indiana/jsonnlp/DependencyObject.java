@@ -5,14 +5,15 @@ DependencyObject.java
 
  */
 
-package edu.indiana.nlpjson;
+package edu.indiana.jsonnlp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DependencyObject {
-	private String type;
-	private List<Integer> governors;
-	private List<Integer> dependents;
+	private String type = "";
+	private List<Integer> governors = new ArrayList<>();
+	private List<Integer> dependents = new ArrayList<>();
 
 	public DependencyObject() {
 		super();

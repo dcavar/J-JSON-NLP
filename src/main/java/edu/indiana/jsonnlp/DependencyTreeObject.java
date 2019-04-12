@@ -1,11 +1,11 @@
-package edu.indiana.nlpjson;
+package edu.indiana.jsonnlp;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DependencyTreeObject {
-	private String name;
-	private List<DependencyObject> dependencies;
+	private String name = "";
+	private List<DependencyObject> dependencies = new ArrayList<>();
 
 	public String getName() {
 		return name;
@@ -30,6 +30,5 @@ public class DependencyTreeObject {
 	public DependencyTreeObject(String name) {
 		super();
 		this.name = name;
-		this.dependencies = new ArrayList<>();
 	}
 }

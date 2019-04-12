@@ -1,16 +1,17 @@
-package edu.indiana.nlpjson;
+package edu.indiana.jsonnlp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SentenceObject {
-	private String id;
-	private String text;
-	private Integer tokenFrom;
-	private Integer tokenTo;
-	private String sentiment;
+	private String id = "";
+	private String text = "";
+	private Integer tokenFrom = -1;
+	private Integer tokenTo = -1;
+	private String sentiment = "";
 	private Boolean complex = false;
-	private String type;
-	private List<EmbeddingObject> embeddings;
+	private String type = "";
+	private List<EmbeddingObject> embeddings = new ArrayList<>();
 
 	public String getId() {
 		return id;

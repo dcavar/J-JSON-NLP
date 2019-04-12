@@ -6,7 +6,7 @@ DependencyObject.java
  */
 
 
-package edu.indiana.nlpjson;
+package edu.indiana.jsonnlp;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,16 +17,16 @@ import java.util.List;
 
 public class NLPJSONObject {
 	public static class MetadataObject {
-		private String conformsTo;
-		private String source;
-		private Date created;
-		private Date date;
-		private String creator;
-		private String publisher;
-		private String title;
-		private String description;
-		private String identifier;
-		private String language;
+		private String conformsTo = "";
+		private String source = "";
+		private Date created = new Date();
+		private Date date = new Date();
+		private String creator = "";
+		private String publisher = "";
+		private String title = "";
+		private String description = "";
+		private String identifier = "";
+		private String language = "";
 
 		public String getConformsTo() {
 			return conformsTo;
@@ -108,14 +108,8 @@ public class NLPJSONObject {
 			this.language = language;
 		}
 	}
-	private MetadataObject DC;
-	private List<DocumentObject> documents;
-
-	public NLPJSONObject() {
-		super();
-		this.DC = new MetadataObject();
-		this.documents = new ArrayList<>();
-	}
+	private MetadataObject DC = new MetadataObject();
+	private List<DocumentObject> documents = new ArrayList<>();
 
 	public MetadataObject getDC() {
 		return DC;

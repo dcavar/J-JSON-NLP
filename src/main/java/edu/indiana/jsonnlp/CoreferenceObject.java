@@ -1,17 +1,12 @@
-package edu.indiana.nlpjson;
+package edu.indiana.jsonnlp;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CoreferenceObject {
 	public static class ReferentObject {
-		private List<Integer> tokens;
-		private Integer head;
-
-		public ReferentObject() {
-			super();
-			this.tokens = new ArrayList<>();
-		}
+		private List<Integer> tokens = new ArrayList<>();
+		private Integer head = -1;
 
 		public List<Integer> getTokens() {
 			return tokens;
@@ -30,10 +25,10 @@ public class CoreferenceObject {
 		}
 	}
 
-	private Integer id;
-	private ReferentObject representative;
-	private List<ReferentObject> referents;
-	private String gender;
+	private Integer id = -1;
+	private ReferentObject representative = new ReferentObject();
+	private List<ReferentObject> referents = new ArrayList<>();
+	private String gender = "";
 
 	public CoreferenceObject() {
 		super();
@@ -42,7 +37,6 @@ public class CoreferenceObject {
 	public CoreferenceObject(Integer id) {
 		super();
 		this.id = id;
-		this.referents = new ArrayList<>();
 	}
 
 	public Integer getId() {
