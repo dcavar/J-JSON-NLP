@@ -1,8 +1,22 @@
-package org.nlplab.jsonnlp;
+/*
+ * ParagraphObject.java
+ *
+ * (C) 2019 by Umang Mehta, Damir Cavar, Aarushi Bisht, Jagpreet Chawala, ...
+ *
+ * Brought to you by the NLP-Lab (https://nlp-lab.org/)
+ */
+
+
+package org.nlp_lab.jsonnlp;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ *
+ */
 public class ParagraphObject {
 	private Integer id = -1;
 	private String text = "";

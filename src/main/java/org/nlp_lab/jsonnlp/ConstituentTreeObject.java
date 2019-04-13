@@ -1,5 +1,17 @@
-package org.nlplab.jsonnlp;
+/*
+ * ConstituentTreeObject.java
+ *
+ * (C) 2019 by Umang Mehta, Damir Cavar, Aarushi Bisht, Jagpreet Chawala, ...
+ *
+ * Brought to you by the NLP-Lab (https://nlp-lab.org/)
+ */
 
+
+package org.nlp_lab.jsonnlp;
+
+/**
+ *
+ */
 public class ConstituentTreeObject {
 	private String sentId = "";
 	private String labelledBracketing = "";

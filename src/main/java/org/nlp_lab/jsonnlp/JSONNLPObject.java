@@ -1,12 +1,14 @@
 /*
-DependencyObject.java
-
-(C) 2019 Umang Mehta, Aarushi Bisht, Damir Cavar
-
+ * JSONNLPObject.java
+ *
+ * (C) 2019 by Umang Mehta, Damir Cavar, Aarushi Bisht, Jagpreet Chawala, ...
+ *
+ * Brought to you by the NLP-Lab (https://nlp-lab.org/)
  */
 
 
-package org.nlplab.jsonnlp;
+package org.nlp_lab.jsonnlp;
+
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,7 +17,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class NLPJSONObject {
+
+/**
+ *
+ */
+public class JSONNLPObject {
 	public static class MetadataObject {
 		private String conformsTo = "";
 		private String source = "";

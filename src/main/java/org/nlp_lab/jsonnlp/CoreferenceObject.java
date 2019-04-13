@@ -1,8 +1,21 @@
-package org.nlplab.jsonnlp;
+/*
+ * CoreferenceObject.java
+ *
+ * (C) 2019 by Umang Mehta, Damir Cavar, Aarushi Bisht, Jagpreet Chawala, ...
+ *
+ * Brought to you by the NLP-Lab (https://nlp-lab.org/)
+ */
+
+
+package org.nlp_lab.jsonnlp;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ *
+ */
 public class CoreferenceObject {
 	public static class ReferentObject {
 		private List<Integer> tokens = new ArrayList<>();

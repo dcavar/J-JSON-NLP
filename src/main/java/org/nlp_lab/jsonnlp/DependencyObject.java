@@ -1,15 +1,22 @@
 /*
-DependencyObject.java
-
-(C) 2019
-
+ * DependencyObject.java
+ *
+ * (C) 2019 by Umang Mehta, Damir Cavar, Aarushi Bisht, Jagpreet Chawala, ...
+ *
+ * Brought to you by the NLP-Lab (https://nlp-lab.org/)
  */
 
-package org.nlplab.jsonnlp;
+
+package org.nlp_lab.jsonnlp;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ *
+ */
 public class DependencyObject {
 	private String type = "";
 	private List<Integer> governors = new ArrayList<>();

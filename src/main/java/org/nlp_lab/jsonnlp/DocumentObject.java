@@ -1,4 +1,14 @@
-package org.nlplab.jsonnlp;
+/*
+ * DocumentObject.java
+ *
+ * (C) 2019 by Umang Mehta, Damir Cavar, Aarushi Bisht, Jagpreet Chawala, ...
+ *
+ * Brought to you by the NLP-Lab (https://nlp-lab.org/)
+ */
+
+
+package org.nlp_lab.jsonnlp;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -7,6 +17,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+/**
+ *
+ */
 public class DocumentObject {
 	private String text = "";
 	private List<TokenObject> tokenList = new ArrayList<>();
