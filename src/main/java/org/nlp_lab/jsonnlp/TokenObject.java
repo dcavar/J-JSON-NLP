@@ -305,6 +305,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method returns a list of word embedding vectors for the token.
 	 *
 	 * @return
 	 */
@@ -313,6 +314,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method sets a list of word embedding vectors for the token.
 	 *
 	 * @param embeddings
 	 */
@@ -321,6 +323,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method returns a list of character embedding vectors for the token.
 	 *
 	 * @return
 	 */
@@ -329,6 +332,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method sets a list of character embedding vectors for the token.
 	 *
 	 * @param characterEmbeddings
 	 */
