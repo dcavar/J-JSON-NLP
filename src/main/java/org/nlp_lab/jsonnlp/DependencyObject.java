@@ -17,7 +17,7 @@ import java.util.List;
 /**
  *
  */
-public class DependencyObject {
+public class DependencyObject extends AbstractJSONNLP {
 	private String type = "";
 	private List<Integer> governors = new ArrayList<>();
 	private List<Integer> dependents = new ArrayList<>();

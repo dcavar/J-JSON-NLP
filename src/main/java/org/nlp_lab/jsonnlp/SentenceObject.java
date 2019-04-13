@@ -17,7 +17,7 @@ import java.util.List;
 /**
  *
  */
-public class SentenceObject {
+public class SentenceObject extends AbstractJSONNLP {
 	private String id = "";
 	private String text = "";
 	private Integer tokenFrom = -1;

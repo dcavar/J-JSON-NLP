@@ -16,8 +16,8 @@ import java.util.List;
 /**
  *
  */
-public class CoreferenceObject {
-	public static class ReferentObject {
+public class CoreferenceObject extends AbstractJSONNLP {
+	public static class ReferentObject extends AbstractJSONNLP {
 		private List<Integer> tokens = new ArrayList<>();
 		private Integer head = -1;
 
