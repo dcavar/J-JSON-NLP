@@ -4,6 +4,7 @@
  * (C) 2019 by Umang Mehta, Damir Cavar, Aarushi Bisht, Jagpreet Chawala, ...
  *
  * Brought to you by the NLP-Lab (https://nlp-lab.org/)
+ *
  */
 
 
@@ -15,7 +16,11 @@ import java.util.List;
 
 
 /**
+ * Token Object Class to map out JSON-NLP Token definitions.
  *
+ * @author Umang Mehta, Damir Cavar
+ * @version 0.1
+ * @since 2019-03-22
  */
 public class TokenObject {
 	private Integer id = -1;
@@ -36,6 +41,11 @@ public class TokenObject {
 	private List<List<Number>> characterEmbeddings = new ArrayList<>();
 	private String sentiment = "";
 
+	/**
+	 * This method returns the ID of the token.
+	 *
+	 * @return int This is the ID of the token.
+	 */
 	public Integer getId() {
 		return id;
 	}
