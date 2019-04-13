@@ -1,10 +1,10 @@
 # Java JSON-NLP Module
 
-(C) 2019 [Damir Cavar], Umang Mehta, Aarushi Bisht, Jagpreet Chawla, ...
+(C) 2019 [Damir Cavar], Umang Mehta, Aarushi Bisht, Jagpreet Chawla, [Oren Baldinger], ...
 
 Java [JSON-NLP] Maven module and validator.
 
-Brought to you by the [NLP-Lab](https://nlp-lab.org/).
+Brought to you by the [NLP-Lab.org].
 
 
 
@@ -35,26 +35,11 @@ To include [JSON-NLP] in your Java project:
 
 
 
-## Notes
-
-### Package Name
-
-Our domain name of the [NLP-Lab] is:
-
-    nlp-lab.org
-
-The package name is:
-
-    org.nlp_lab.clauseboundaryms
-
-The Java guidelines recommend:
-
-    If the domain name contains a hyphen, or any other special character not allowed in an identifier (§3.8), convert it into an underscore.
-
-
 
 
 [Damir Cavar]: http://damir.cavar.me/ "Damir Cavar"
 [JSON-NLP]: https://github.com/dcavar/JSON-NLP "JSON-NLP GitHub repo"
 [NLP-Lab]: https://nlp-lab.org/ "NLP-Lab homepage"
+[Oren Baldinger]: https://oren.baldinger.me/ "Oren Baldinger"
+[NLP-Lab.org]: http://nlp-lab.org/ "NLP-Lab.org"
 
