@@ -16,7 +16,7 @@ import java.util.List;
 /**
  *
  */
-public class EmbeddingObject {
+public class EmbeddingObject extends AbstractJSONNLP {
 	private List<Number> vector = new ArrayList<>();
 	private String model = "";
 

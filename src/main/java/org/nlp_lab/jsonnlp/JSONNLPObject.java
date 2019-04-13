@@ -21,8 +21,8 @@ import java.util.List;
 /**
  *
  */
-public class JSONNLPObject {
-	public static class MetadataObject {
+public class JSONNLPObject extends AbstractJSONNLP {
+	public static class MetadataObject extends AbstractJSONNLP {
 		private String conformsTo = "";
 		private String source = "";
 		private Date created = new Date();
@@ -133,17 +133,4 @@ public class JSONNLPObject {
 		this.documents = documents;
 	}
 
-	public String toJSON() throws JsonProcessingException {
-		return new ObjectMapper().writeValueAsString(this);
-	}
-
-	@Override
-	public String toString() {
-		try {
-			return toJSON();
-		}
-		catch (JsonProcessingException e) {
-			return "{}";
-		}
-	}
 }

@@ -22,7 +22,7 @@ import java.util.List;
  * @version 0.1
  * @since 2019-03-22
  */
-public class TokenObject {
+public class TokenObject extends AbstractJSONNLP {
 	private Integer id = -1;
 	private String word = "";
 	private String lemma = "";

@@ -17,7 +17,7 @@ import java.util.List;
 /**
  *
  */
-public class DependencyTreeObject {
+public class DependencyTreeObject extends AbstractJSONNLP {
 	private String name = "";
 	private List<DependencyObject> dependencies = new ArrayList<>();
 

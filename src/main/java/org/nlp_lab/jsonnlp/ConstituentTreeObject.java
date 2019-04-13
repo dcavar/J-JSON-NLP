@@ -12,7 +12,7 @@ package org.nlp_lab.jsonnlp;
 /**
  *
  */
-public class ConstituentTreeObject {
+public class ConstituentTreeObject extends AbstractJSONNLP {
 	private String sentId = "";
 	private String labelledBracketing = "";
 

@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  *
  */
-public class DocumentObject {
+public class DocumentObject extends AbstractJSONNLP {
 	private String text = "";
 	private List<TokenObject> tokenList = new ArrayList<>();
 	private List<ParagraphObject> paragraphs = new ArrayList<>();

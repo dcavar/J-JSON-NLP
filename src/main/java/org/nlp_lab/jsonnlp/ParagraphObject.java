@@ -17,7 +17,7 @@ import java.util.List;
 /**
  *
  */
-public class ParagraphObject {
+public class ParagraphObject extends AbstractJSONNLP {
 	private Integer id = -1;
 	private String text = "";
 	private Integer tokenFrom = -1;
