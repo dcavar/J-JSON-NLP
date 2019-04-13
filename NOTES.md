@@ -24,6 +24,51 @@ The credentials have to be set up in *.m2/settings.xml*:
         </server>
     </servers>
 
+Add the Nexus plugin, the Javadoc, GPG-, and the JAR-Source plugins to pom.xml:
+
+    <build>
+    	<plugins>
+    		<plugin>
+    			<groupId>org.sonatype.plugins</groupId>
+    			<artifactId>nexus-staging-maven-plugin</artifactId>
+    			<version>1.6.7</version>
+    			<extensions>true</extensions>
+    			<configuration>
+    				<serverId>ossrh</serverId>
+    				<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+    				<autoReleaseAfterClose>true</autoReleaseAfterClose>
+    			</configuration>
+    		</plugin>
+    		<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-source-plugin</artifactId>
+    			<version>2.2.1</version>
+    			<executions>
+    				<execution>
+    					<id>attach-sources</id>
+    					<goals>
+    						<goal>jar-no-fork</goal>
+    					</goals>
+    				</execution>
+    			</executions>
+    		</plugin>
+    		<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-javadoc-plugin</artifactId>
+    			<version>2.9.1</version>
+    			<executions>
+    				<execution>
+    					<id>attach-javadocs</id>
+    					<goals>
+    							<goal>jar</goal>
+    						</goals>
+    					</execution>
+    				</executions>
+    			</plugin>
+    		</plugins>
+    	</build>
+
+
 
 
 ## Package Name
