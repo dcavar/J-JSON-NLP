@@ -98,15 +98,19 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method returns the offset of the beginning character of the token.
 	 *
-	 * @return
+	 * @see org.nlp_lab.jsonnlp.TokenObject#setCharacterOffsetBegin()
+	 * @return int
 	 */
 	public Integer getCharacterOffsetBegin() {
 		return characterOffsetBegin;
 	}
 
 	/**
+	 * This method sets the offset of the beginning character of the token.
 	 *
+	 * @see org.nlp_lab.jsonnlp.TokenObject#getCharacterOffsetBegin()
 	 * @param characterOffsetBegin
 	 */
 	public void setCharacterOffsetBegin(Integer characterOffsetBegin) {
@@ -114,6 +118,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method returns the offset of the end character of the token.
 	 *
 	 * @return
 	 */
@@ -122,6 +127,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method sets the offset of the end character of the token.
 	 *
 	 * @param characterOffsetEnd
 	 */
@@ -130,6 +136,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method returns the Part-of-Speech Tag for the token.
 	 *
 	 * @return
 	 */
@@ -138,6 +145,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method sets the Part-of-Speech tag for the token.
 	 *
 	 * @param POS
 	 */
@@ -146,6 +154,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method gets the Named Entity label for the token.
 	 *
 	 * @return
 	 */
@@ -154,6 +163,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method sets the Named Entity label for the token.
 	 *
 	 * @param NER
 	 */
@@ -162,6 +172,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method returns the speaker ID for the token.
 	 *
 	 * @return
 	 */
@@ -170,6 +181,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method sets the speaker ID for the token.
 	 *
 	 * @param speaker
 	 */
@@ -178,6 +190,8 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method returns the flag for foreign words for the token. If the token
+	 * is a foreign word, the returned value is true, else it is false.
 	 *
 	 * @return
 	 */
@@ -186,7 +200,9 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method sets the foreign word flag for the token.
 	 *
+	 * @see org.nlp_lab.jsonnlp.TokenObject#getForeign()
 	 * @param foreign
 	 */
 	public void setForeign(Boolean foreign) {
@@ -194,6 +210,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method returns the language ID for the token.
 	 *
 	 * @return
 	 */
@@ -202,6 +219,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method sets the language ID for the token.
 	 *
 	 * @param language
 	 */
@@ -210,6 +228,9 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method returns the flag whether the token is overt or covert. Overt tokens have a string
+	 * manifestation in the input text. Covert tokens are implicit and derived by Natural Language
+	 * Processing components that generate JSON-NLP.
 	 *
 	 * @return
 	 */
@@ -218,7 +239,9 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method sets the overt flag for the overt or covert property of the token.
 	 *
+	 * @see org.nlp_lab.jsonnlp.TokenObject#getOvert()
 	 * @param overt
 	 */
 	public void setOvert(Boolean overt) {
@@ -226,6 +249,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method returns the list of synonyms for the token.
 	 *
 	 * @return
 	 */
@@ -234,7 +258,9 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method sets the synonyms for the token.
 	 *
+	 * @see org.nlp_lab.jsonnlp.TokenObject#getSynonyms()
 	 * @param synonyms
 	 */
 	public void setSynonyms(List<String> synonyms) {
@@ -242,6 +268,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method returns the list of hypernyms for the token.
 	 *
 	 * @return
 	 */
@@ -250,7 +277,9 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method sets the list of hypernyms for the token.
 	 *
+	 * @see org.nlp_lab.jsonnlp.TokenObject#getHypernyms()
 	 * @param hypernyms
 	 */
 	public void setHypernyms(List<String> hypernyms) {
@@ -258,6 +287,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method returns the list of hyponyms for the token.
 	 *
 	 * @return
 	 */
@@ -266,6 +296,7 @@ public class TokenObject extends AbstractJSONNLP {
 	}
 
 	/**
+	 * This method sets the list of hyponyms for the token.
 	 *
 	 * @param hyponyms
 	 */
