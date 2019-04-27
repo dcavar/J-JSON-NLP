@@ -3,6 +3,8 @@ package org.nlp_lab.jsonnlp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -73,9 +75,9 @@ public class DocumentsProperty {
     @JsonPropertyDescription("Classification labels applied to a given section")
     private List<Label> labels = new ArrayList<Label>();
     @JsonProperty("paragraphs")
-    private Paragraphs paragraphs;
+    private Map<String, ParagraphsProperty> paragraphs;
     @JsonProperty("sentences")
-    private Sentences sentences;
+    private Map<String, SentencesProperty> sentences;
     @JsonProperty("clauses")
     private Clauses clauses;
     /**
@@ -85,7 +87,7 @@ public class DocumentsProperty {
      */
     @JsonProperty("tokenList")
     @JsonPropertyDescription("A mapping of tokens objects in the document")
-    private TokenList tokenList;
+    private Map<String, TokenListProperty> tokenList;
     /**
      * Dependency graphs of any style
      * 
@@ -224,22 +226,22 @@ public class DocumentsProperty {
     }
 
     @JsonProperty("paragraphs")
-    public Paragraphs getParagraphs() {
+    public Map<String, ParagraphsProperty> getParagraphs() {
         return paragraphs;
     }
 
     @JsonProperty("paragraphs")
-    public void setParagraphs(Paragraphs paragraphs) {
+    public void setParagraphs(Map<String, ParagraphsProperty> paragraphs) {
         this.paragraphs = paragraphs;
     }
 
     @JsonProperty("sentences")
-    public Sentences getSentences() {
+    public Map<String, SentencesProperty> getSentences() {
         return sentences;
     }
 
     @JsonProperty("sentences")
-    public void setSentences(Sentences sentences) {
+    public void setSentences(Map<String, SentencesProperty> sentences) {
         this.sentences = sentences;
     }
 
@@ -259,7 +261,7 @@ public class DocumentsProperty {
      * 
      */
     @JsonProperty("tokenList")
-    public TokenList getTokenList() {
+    public Map<String, TokenListProperty> getTokenList() {
         return tokenList;
     }
 
@@ -269,7 +271,7 @@ public class DocumentsProperty {
      * 
      */
     @JsonProperty("tokenList")
-    public void setTokenList(TokenList tokenList) {
+    public void setTokenList(Map<String, TokenListProperty> tokenList) {
         this.tokenList = tokenList;
     }
 

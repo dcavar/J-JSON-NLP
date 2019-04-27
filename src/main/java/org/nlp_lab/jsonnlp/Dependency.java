@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import java.util.List;
+import java.util.Map;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "style",
@@ -27,7 +30,7 @@ public class Dependency {
      */
     @JsonProperty("arcs")
     @JsonPropertyDescription("A mapping of dependent token id to a list of governors")
-    private Arcs arcs;
+    private Map<String, List<ArcsProperty>> arcs;
 
     /**
      * 
@@ -55,7 +58,7 @@ public class Dependency {
      * 
      */
     @JsonProperty("arcs")
-    public Arcs getArcs() {
+    public Map<String, List<ArcsProperty>> getArcs() {
         return arcs;
     }
 
@@ -65,7 +68,7 @@ public class Dependency {
      * 
      */
     @JsonProperty("arcs")
-    public void setArcs(Arcs arcs) {
+    public void setArcs(Map<String, List<ArcsProperty>> arcs) {
         this.arcs = arcs;
     }
 

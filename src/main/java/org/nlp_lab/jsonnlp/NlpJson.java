@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import java.util.Map;
+
 
 /**
  * The NLP-JSON Schema
@@ -36,7 +38,7 @@ public class NlpJson {
      * 
      */
     @JsonProperty("documents")
-    private Documents documents;
+    private Map<String, DocumentsProperty> documents;
 
     @JsonProperty("meta")
     public Meta getMeta() {
@@ -72,7 +74,7 @@ public class NlpJson {
      * 
      */
     @JsonProperty("documents")
-    public Documents getDocuments() {
+    public Map<String, DocumentsProperty> getDocuments() {
         return documents;
     }
 
@@ -82,7 +84,7 @@ public class NlpJson {
      * 
      */
     @JsonProperty("documents")
-    public void setDocuments(Documents documents) {
+    public void setDocuments(Map<String, DocumentsProperty> documents) {
         this.documents = documents;
     }
 
