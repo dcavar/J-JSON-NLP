@@ -1,10 +1,8 @@
 
 package org.nlp_lab.jsonnlp;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -51,7 +49,7 @@ public class ParagraphsProperty {
      */
     @JsonProperty("features")
     @JsonPropertyDescription("Linguistic features, corresponding to the ConLL format")
-    private Features features;
+    private Map<String, String> features;
     /**
      * Confidence levels of a particular attribute
      * 
@@ -128,7 +126,7 @@ public class ParagraphsProperty {
      * 
      */
     @JsonProperty("features")
-    public Features getFeatures() {
+    public Map<String, String> getFeatures() {
         return features;
     }
 
@@ -137,7 +135,7 @@ public class ParagraphsProperty {
      * 
      */
     @JsonProperty("features")
-    public void setFeatures(Features features) {
+    public void setFeatures(Map<String, String> features) {
         this.features = features;
     }
 

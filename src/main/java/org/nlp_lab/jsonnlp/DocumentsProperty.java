@@ -59,7 +59,7 @@ public class DocumentsProperty {
      */
     @JsonProperty("features")
     @JsonPropertyDescription("Linguistic features, corresponding to the ConLL format")
-    private Features features;
+    private Map<String, String> features;
     /**
      * Confidence levels of a particular attribute
      * 
@@ -176,7 +176,7 @@ public class DocumentsProperty {
      * 
      */
     @JsonProperty("features")
-    public Features getFeatures() {
+    public Map<String, String> getFeatures() {
         return features;
     }
 
@@ -185,7 +185,7 @@ public class DocumentsProperty {
      * 
      */
     @JsonProperty("features")
-    public void setFeatures(Features features) {
+    public void setFeatures(Map<String, String> features) {
         this.features = features;
     }
 
