@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -38,7 +39,7 @@ public class NlpJson {
      * 
      */
     @JsonProperty("documents")
-    private Map<String, DocumentsProperty> documents;
+    private Map<String, DocumentsProperty> documents = new HashMap<>();
 
     @JsonProperty("meta")
     public Meta getMeta() {

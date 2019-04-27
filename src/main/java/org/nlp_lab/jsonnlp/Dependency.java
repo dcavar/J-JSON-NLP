@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,7 +31,7 @@ public class Dependency {
      */
     @JsonProperty("arcs")
     @JsonPropertyDescription("A mapping of dependent token id to a list of governors")
-    private Map<String, List<ArcsProperty>> arcs;
+    private Map<String, List<ArcsProperty>> arcs = new HashMap<>();
 
     /**
      * 

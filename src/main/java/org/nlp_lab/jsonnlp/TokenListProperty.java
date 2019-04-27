@@ -61,7 +61,7 @@ public class TokenListProperty {
      */
     @JsonProperty("features")
     @JsonPropertyDescription("Linguistic features, corresponding to the ConLL format")
-    private Map<String, String> features;
+    private Map<String, String> features = new HashMap<>();
     /**
      * Miscellaneous features, corresponding to the ConLL format
      * 

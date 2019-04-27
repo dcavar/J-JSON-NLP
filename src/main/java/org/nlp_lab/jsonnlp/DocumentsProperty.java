@@ -2,6 +2,7 @@
 package org.nlp_lab.jsonnlp;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -59,7 +60,7 @@ public class DocumentsProperty {
      */
     @JsonProperty("features")
     @JsonPropertyDescription("Linguistic features, corresponding to the ConLL format")
-    private Map<String, String> features;
+    private Map<String, String> features = new HashMap<>();
     /**
      * Confidence levels of a particular attribute
      * 
@@ -75,9 +76,9 @@ public class DocumentsProperty {
     @JsonPropertyDescription("Classification labels applied to a given section")
     private List<Label> labels = new ArrayList<Label>();
     @JsonProperty("paragraphs")
-    private Map<String, ParagraphsProperty> paragraphs;
+    private Map<String, ParagraphsProperty> paragraphs = new HashMap<>();
     @JsonProperty("sentences")
-    private Map<String, SentencesProperty> sentences;
+    private Map<String, SentencesProperty> sentences = new HashMap<>();
     @JsonProperty("clauses")
     private Clauses clauses;
     /**
@@ -87,7 +88,7 @@ public class DocumentsProperty {
      */
     @JsonProperty("tokenList")
     @JsonPropertyDescription("A mapping of tokens objects in the document")
-    private Map<String, TokenListProperty> tokenList;
+    private Map<String, TokenListProperty> tokenList = new HashMap<>();
     /**
      * Dependency graphs of any style
      * 

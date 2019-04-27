@@ -49,7 +49,7 @@ public class ParagraphsProperty {
      */
     @JsonProperty("features")
     @JsonPropertyDescription("Linguistic features, corresponding to the ConLL format")
-    private Map<String, String> features;
+    private Map<String, String> features = new HashMap<>();
     /**
      * Confidence levels of a particular attribute
      * 
