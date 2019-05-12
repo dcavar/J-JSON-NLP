@@ -1,3 +1,6 @@
+/**
+ *
+ */
 
 package org.nlp_lab.jsonnlp;
 
@@ -11,7 +14,7 @@ import java.util.Map;
 
 
 /**
- * The NLP-JSON Schema
+ * The JSON-NLP Schema
  * <p>
  * 
  * 
