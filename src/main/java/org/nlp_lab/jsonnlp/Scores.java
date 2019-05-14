@@ -2,6 +2,8 @@
 package org.nlp_lab.jsonnlp;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -14,6 +16,22 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 })
 public class Scores {
+
+    /**
+     * Universal part of speech tag probability
+     *
+     */
+    @JsonProperty("upos")
+    @JsonPropertyDescription("Universal part of speech tag probability")
+    private double upos;
+
+    /**
+     * Language-specific part of speech tag probability
+     *
+     */
+    @JsonProperty("xpos")
+    @JsonPropertyDescription("Language-specific part of speech tag probability")
+    private double xpos;
 
     @Override
     public String toString() {
