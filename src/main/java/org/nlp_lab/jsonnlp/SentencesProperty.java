@@ -26,7 +26,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
     "type",
     "embeddings",
     "features",
-    "scores"
+    "scores",
+        "conllId"
 })
 public class SentencesProperty {
 
@@ -105,6 +106,8 @@ public class SentencesProperty {
     private Boolean complex = false;
     @JsonProperty("type")
     private String type;
+    @JsonProperty("conllId")
+    private String conllId;
     /**
      * Allow for embeddings from multiple sources
      * 
@@ -387,6 +390,24 @@ public class SentencesProperty {
         this.scores = scores;
     }
 
+    /**
+     * conllId
+     *
+     */
+    @JsonProperty("conllId")
+    public void setConllId(String conllId) {
+        this.conllId = conllId;
+    }
+
+    /**
+     * conllId
+     *
+     */
+    @JsonProperty("conllId")
+    public String getConllId() {
+        return conllId;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -455,6 +476,10 @@ public class SentencesProperty {
         sb.append('=');
         sb.append(((this.scores == null)?"<null>":this.scores));
         sb.append(',');
+        sb.append("conllId");
+        sb.append('=');
+        sb.append(((this.conllId == null)?"<null>":this.conllId));
+        sb.append(',');
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
         } else {
@@ -482,6 +507,7 @@ public class SentencesProperty {
         result = ((result* 31)+((this.id == null)? 0 :this.id.hashCode()));
         result = ((result* 31)+((this.text == null)? 0 :this.text.hashCode()));
         result = ((result* 31)+((this.object == null)? 0 :this.object.hashCode()));
+        result = ((result* 31)+((this.conllId == null)? 0 :this.conllId.hashCode()));
         return result;
     }
 
