@@ -15,7 +15,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 })
 public class Scores {
 
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
