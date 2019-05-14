@@ -142,7 +142,7 @@ public class TokenListProperty {
     @JsonProperty("speaker")
     private String speaker;
     @JsonProperty("synsets")
-    private List<Synset> synsets = new ArrayList<Synset>();
+    private Map<String, Synset> synsets = new HashMap<>();
     /**
      * Allow for embeddings from multiple sources
      * 
@@ -442,12 +442,12 @@ public class TokenListProperty {
     }
 
     @JsonProperty("synsets")
-    public List<Synset> getSynsets() {
+    public Map<String,Synset> getSynsets() {
         return synsets;
     }
 
     @JsonProperty("synsets")
-    public void setSynsets(List<Synset> synsets) {
+    public void setSynsets(Map<String, Synset> synsets) {
         this.synsets = synsets;
     }
 
