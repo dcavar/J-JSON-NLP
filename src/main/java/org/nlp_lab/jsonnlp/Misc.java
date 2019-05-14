@@ -21,7 +21,7 @@ public class Misc {
      * Space after token
      *
      */
-    @JsonProperty("spaceAfter")
+    @JsonProperty("SpaceAfter")
     @JsonPropertyDescription("Space after token")
     private boolean SpaceAfter;
 
