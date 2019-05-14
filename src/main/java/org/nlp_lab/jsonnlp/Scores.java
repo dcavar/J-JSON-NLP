@@ -33,6 +33,14 @@ public class Scores {
     @JsonPropertyDescription("Language-specific part of speech tag probability")
     private double xpos;
 
+    /**
+     * The Named Entity Tag Probability
+     *
+     */
+    @JsonProperty("entity")
+    @JsonPropertyDescription("The Named Entity Tag Probability")
+    private double entity;
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

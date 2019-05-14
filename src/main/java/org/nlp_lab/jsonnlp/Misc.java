@@ -2,6 +2,8 @@
 package org.nlp_lab.jsonnlp;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -15,6 +17,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 })
 public class Misc {
 
+    /**
+     * Space after token
+     *
+     */
+    @JsonProperty("spaceAfter")
+    @JsonPropertyDescription("Space after token")
+    private boolean spaceAfter;
 
     @Override
     public String toString() {
