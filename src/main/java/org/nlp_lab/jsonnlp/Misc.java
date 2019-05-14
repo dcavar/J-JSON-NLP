@@ -23,7 +23,7 @@ public class Misc {
      */
     @JsonProperty("spaceAfter")
     @JsonPropertyDescription("Space after token")
-    private boolean spaceAfter;
+    private boolean SpaceAfter;
 
     @Override
     public String toString() {
