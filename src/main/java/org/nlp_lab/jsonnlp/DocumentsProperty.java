@@ -37,7 +37,7 @@ public class DocumentsProperty {
      */
     @JsonProperty("id")
     @JsonPropertyDescription("Document ID")
-    private String id;
+    private int id;
     @JsonProperty("meta")
     private Meta meta;
     /**
@@ -113,7 +113,7 @@ public class DocumentsProperty {
      * 
      */
     @JsonProperty("id")
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -122,7 +122,7 @@ public class DocumentsProperty {
      * 
      */
     @JsonProperty("id")
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -338,7 +338,7 @@ public class DocumentsProperty {
         sb.append(DocumentsProperty.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("id");
         sb.append('=');
-        sb.append(((this.id == null)?"<null>":this.id));
+        sb.append(this.id);
         sb.append(',');
         sb.append("meta");
         sb.append('=');
@@ -417,7 +417,7 @@ public class DocumentsProperty {
         result = ((result* 31)+((this.dependencies == null)? 0 :this.dependencies.hashCode()));
         result = ((result* 31)+((this.features == null)? 0 :this.features.hashCode()));
         result = ((result* 31)+((this.meta == null)? 0 :this.meta.hashCode()));
-        result = ((result* 31)+((this.id == null)? 0 :this.id.hashCode()));
+        result = ((result* 31)+((this.id)));
         result = ((result* 31)+((this.text == null)? 0 :this.text.hashCode()));
         result = ((result* 31)+((this.tokenList == null)? 0 :this.tokenList.hashCode()));
         result = ((result* 31)+((this.coreferences == null)? 0 :this.coreferences.hashCode()));
@@ -434,7 +434,7 @@ public class DocumentsProperty {
             return false;
         }
         DocumentsProperty rhs = ((DocumentsProperty) other);
-        return ((((((((((((((((this.embeddings == rhs.embeddings)||((this.embeddings!= null)&&this.embeddings.equals(rhs.embeddings)))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))))&&((this.sentences == rhs.sentences)||((this.sentences!= null)&&this.sentences.equals(rhs.sentences))))&&((this.clauses == rhs.clauses)||((this.clauses!= null)&&this.clauses.equals(rhs.clauses))))&&((this.paragraphs == rhs.paragraphs)||((this.paragraphs!= null)&&this.paragraphs.equals(rhs.paragraphs))))&&((this.expressions == rhs.expressions)||((this.expressions!= null)&&this.expressions.equals(rhs.expressions))))&&((this.labels == rhs.labels)||((this.labels!= null)&&this.labels.equals(rhs.labels))))&&((this.dependencies == rhs.dependencies)||((this.dependencies!= null)&&this.dependencies.equals(rhs.dependencies))))&&((this.features == rhs.features)||((this.features!= null)&&this.features.equals(rhs.features))))&&((this.meta == rhs.meta)||((this.meta!= null)&&this.meta.equals(rhs.meta))))&&((this.id == rhs.id)||((this.id!= null)&&this.id.equals(rhs.id))))&&((this.text == rhs.text)||((this.text!= null)&&this.text.equals(rhs.text))))&&((this.tokenList == rhs.tokenList)||((this.tokenList!= null)&&this.tokenList.equals(rhs.tokenList))))&&((this.coreferences == rhs.coreferences)||((this.coreferences!= null)&&this.coreferences.equals(rhs.coreferences))))&&((this.constituents == rhs.constituents)||((this.constituents!= null)&&this.constituents.equals(rhs.constituents))));
+        return ((((((((((((((((this.embeddings == rhs.embeddings)||((this.embeddings!= null)&&this.embeddings.equals(rhs.embeddings)))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))))&&((this.sentences == rhs.sentences)||((this.sentences!= null)&&this.sentences.equals(rhs.sentences))))&&((this.clauses == rhs.clauses)||((this.clauses!= null)&&this.clauses.equals(rhs.clauses))))&&((this.paragraphs == rhs.paragraphs)||((this.paragraphs!= null)&&this.paragraphs.equals(rhs.paragraphs))))&&((this.expressions == rhs.expressions)||((this.expressions!= null)&&this.expressions.equals(rhs.expressions))))&&((this.labels == rhs.labels)||((this.labels!= null)&&this.labels.equals(rhs.labels))))&&((this.dependencies == rhs.dependencies)||((this.dependencies!= null)&&this.dependencies.equals(rhs.dependencies))))&&((this.features == rhs.features)||((this.features!= null)&&this.features.equals(rhs.features))))&&((this.meta == rhs.meta)||((this.meta!= null)&&this.meta.equals(rhs.meta))))&&((this.id == rhs.id)))&&((this.text == rhs.text)||((this.text!= null)&&this.text.equals(rhs.text))))&&((this.tokenList == rhs.tokenList)||((this.tokenList!= null)&&this.tokenList.equals(rhs.tokenList))))&&((this.coreferences == rhs.coreferences)||((this.coreferences!= null)&&this.coreferences.equals(rhs.coreferences))))&&((this.constituents == rhs.constituents)||((this.constituents!= null)&&this.constituents.equals(rhs.constituents))));
     }
 
 }
