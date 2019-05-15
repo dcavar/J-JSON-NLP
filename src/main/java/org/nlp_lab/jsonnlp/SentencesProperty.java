@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -101,7 +102,8 @@ public class SentencesProperty {
      */
     @JsonProperty("labels")
     @JsonPropertyDescription("Classification labels applied to a given section")
-    private List<Label> labels = new ArrayList<Label>();
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    private List<Label> labels = new ArrayList<>();
     @JsonProperty("complex")
     private Boolean complex = false;
     @JsonProperty("type")
