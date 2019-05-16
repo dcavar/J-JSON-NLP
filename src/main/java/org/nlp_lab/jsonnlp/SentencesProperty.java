@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -41,7 +42,7 @@ public class SentencesProperty {
      */
     @JsonProperty("id")
     @JsonPropertyDescription("Unique sentence ID")
-    private String id;
+    private int id;
     /**
      * The text of this sentence
      * 
@@ -106,7 +107,8 @@ public class SentencesProperty {
      */
     @JsonProperty("labels")
     @JsonPropertyDescription("Classification labels applied to a given section")
-    private List<Label> labels = new ArrayList<Label>();
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    private List<Label> labels = new ArrayList<>();
     @JsonProperty("complex")
     private Boolean complex = false;
     @JsonProperty("type")
@@ -212,7 +214,7 @@ public class SentencesProperty {
      * 
      */
     @JsonProperty("id")
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -221,7 +223,7 @@ public class SentencesProperty {
      * 
      */
     @JsonProperty("id")
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -493,7 +495,7 @@ public class SentencesProperty {
         sb.append(SentencesProperty.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("id");
         sb.append('=');
-        sb.append(((this.id == null)?"<null>":this.id));
+        sb.append(this.id);
         sb.append(',');
         sb.append("text");
         sb.append('=');
@@ -583,7 +585,7 @@ public class SentencesProperty {
         result = ((result* 31)+((this.complex == null)? 0 :this.complex.hashCode()));
         result = ((result* 31)+((this.mainVerb == null)? 0 :this.mainVerb.hashCode()));
         result = ((result* 31)+((this.tokens == null)? 0 :this.tokens.hashCode()));
-        result = ((result* 31)+((this.id == null)? 0 :this.id.hashCode()));
+        result = ((result* 31)+(this.id));
         result = ((result* 31)+((this.text == null)? 0 :this.text.hashCode()));
         result = ((result* 31)+((this.object == null)? 0 :this.object.hashCode()));
         result = ((result* 31)+((this.conllId == null)? 0 :this.conllId.hashCode()));
@@ -599,7 +601,7 @@ public class SentencesProperty {
             return false;
         }
         SentencesProperty rhs = ((SentencesProperty) other);
-        return (((((((((((((((((this.embeddings == rhs.embeddings)||((this.embeddings!= null)&&this.embeddings.equals(rhs.embeddings)))&&((this.tokenTo == rhs.tokenTo)||((this.tokenTo!= null)&&this.tokenTo.equals(rhs.tokenTo))))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))))&&((this.subject == rhs.subject)||((this.subject!= null)&&this.subject.equals(rhs.subject))))&&((this.clauses == rhs.clauses)||((this.clauses!= null)&&this.clauses.equals(rhs.clauses))))&&((this.tokenFrom == rhs.tokenFrom)||((this.tokenFrom!= null)&&this.tokenFrom.equals(rhs.tokenFrom))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.labels == rhs.labels)||((this.labels!= null)&&this.labels.equals(rhs.labels))))&&((this.features == rhs.features)||((this.features!= null)&&this.features.equals(rhs.features))))&&((this.translations == rhs.translations)||((this.translations!= null)&&this.translations.equals(rhs.translations))))&&((this.complex == rhs.complex)||((this.complex!= null)&&this.complex.equals(rhs.complex))))&&((this.mainVerb == rhs.mainVerb)||((this.mainVerb!= null)&&this.mainVerb.equals(rhs.mainVerb))))&&((this.tokens == rhs.tokens)||((this.tokens!= null)&&this.tokens.equals(rhs.tokens))))&&((this.id == rhs.id)||((this.id!= null)&&this.id.equals(rhs.id))))&&((this.text == rhs.text)||((this.text!= null)&&this.text.equals(rhs.text))))&&((this.object == rhs.object)||((this.object!= null)&&this.object.equals(rhs.object))));
+        return (((((((((((((((((this.embeddings == rhs.embeddings)||((this.embeddings!= null)&&this.embeddings.equals(rhs.embeddings)))&&((this.tokenTo == rhs.tokenTo)||((this.tokenTo!= null)&&this.tokenTo.equals(rhs.tokenTo))))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))))&&((this.subject == rhs.subject)||((this.subject!= null)&&this.subject.equals(rhs.subject))))&&((this.clauses == rhs.clauses)||((this.clauses!= null)&&this.clauses.equals(rhs.clauses))))&&((this.tokenFrom == rhs.tokenFrom)||((this.tokenFrom!= null)&&this.tokenFrom.equals(rhs.tokenFrom))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.labels == rhs.labels)||((this.labels!= null)&&this.labels.equals(rhs.labels))))&&((this.features == rhs.features)||((this.features!= null)&&this.features.equals(rhs.features))))&&((this.translations == rhs.translations)||((this.translations!= null)&&this.translations.equals(rhs.translations))))&&((this.complex == rhs.complex)||((this.complex!= null)&&this.complex.equals(rhs.complex))))&&((this.mainVerb == rhs.mainVerb)||((this.mainVerb!= null)&&this.mainVerb.equals(rhs.mainVerb))))&&((this.tokens == rhs.tokens)||((this.tokens!= null)&&this.tokens.equals(rhs.tokens))))&&((this.id == rhs.id)))&&((this.text == rhs.text)||((this.text!= null)&&this.text.equals(rhs.text))))&&((this.object == rhs.object)||((this.object!= null)&&this.object.equals(rhs.object))));
     }
 
 }

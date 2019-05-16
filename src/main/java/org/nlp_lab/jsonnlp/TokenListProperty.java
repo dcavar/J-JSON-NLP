@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
-    "text",
+    "text", "frames",
     "features",
     "misc",
     "scores",
@@ -36,7 +36,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
     "synsets",
     "embeddings",
     "characterEmbeddings",
-    "labels"
+    "labels", "verbFrames"
 })
 public class TokenListProperty {
 
@@ -143,6 +143,11 @@ public class TokenListProperty {
     private String speaker;
     @JsonProperty("synsets")
     private Map<String, Synset> synsets = new HashMap<>();
+    @JsonProperty("frames")
+    private Map<String, Frames> frames = new HashMap<>();
+
+    @JsonProperty("verbFrames")
+    private Map<String, VerbFrames> verbFrames = new HashMap<>();
     /**
      * Allow for embeddings from multiple sources
      * 
@@ -486,11 +491,33 @@ public class TokenListProperty {
     public void setCharacterEmbeddings(List<CharacterEmbedding> characterEmbeddings) {
         this.characterEmbeddings = characterEmbeddings;
     }
-
+    @JsonProperty("verbFrames")
+    public Map<String, VerbFrames> getVerbFrames() {
+        return verbFrames;
+    }
+    @JsonProperty("verbFrames")
+    public void setVerbFrames(Map<String, VerbFrames> verbFrames) {
+        this.verbFrames = verbFrames;
+    }
     /**
-     * Classification labels applied to a given section
+     * Frames
      * 
      */
+    @JsonProperty("frames")
+    public Map<String,Frames> getFrames() {
+        return frames;
+    }
+
+    /**
+     * Frames
+     * 
+     */
+    @JsonProperty("frames")
+    public void setFrames(Map<String, Frames> frames) {
+        this.frames = frames;
+    }
+
+
     @JsonProperty("labels")
     public List<Label> getLabels() {
         return labels;
@@ -498,13 +525,12 @@ public class TokenListProperty {
 
     /**
      * Classification labels applied to a given section
-     * 
+     *
      */
     @JsonProperty("labels")
     public void setLabels(List<Label> labels) {
         this.labels = labels;
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
