@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "scores",
-    "sentId",
+    "sentenceId",
     "labeledBracketing",
     "enumeratedLabeledBracketing",
     "nodes"
@@ -30,8 +30,8 @@ public class Constituent {
      * (Required)
      * 
      */
-    @JsonProperty("sentId")
-    private Integer sentId;
+    @JsonProperty("sentenceId")
+    private Integer sentenceId;
     /**
      * 
      * (Required)
@@ -67,9 +67,9 @@ public class Constituent {
      * (Required)
      * 
      */
-    @JsonProperty("sentId")
-    public Integer getSentId() {
-        return sentId;
+    @JsonProperty("sentenceId")
+    public Integer getSentenceId() {
+        return sentenceId;
     }
 
     /**
@@ -77,9 +77,9 @@ public class Constituent {
      * (Required)
      * 
      */
-    @JsonProperty("sentId")
-    public void setSentId(Integer sentId) {
-        this.sentId = sentId;
+    @JsonProperty("sentenceId")
+    public void setSentenceId(Integer sentenceId) {
+        this.sentenceId = sentenceId;
     }
 
     /**
@@ -130,9 +130,9 @@ public class Constituent {
         sb.append('=');
         sb.append(((this.scores == null)?"<null>":this.scores));
         sb.append(',');
-        sb.append("sentId");
+        sb.append("sentenceId");
         sb.append('=');
-        sb.append(((this.sentId == null)?"<null>":this.sentId));
+        sb.append(((this.sentenceId == null)?"<null>":this.sentenceId));
         sb.append(',');
         sb.append("labeledBracketing");
         sb.append('=');
@@ -158,7 +158,7 @@ public class Constituent {
     public int hashCode() {
         int result = 1;
         result = ((result* 31)+((this.enumeratedLabeledBracketing == null)? 0 :this.enumeratedLabeledBracketing.hashCode()));
-        result = ((result* 31)+((this.sentId == null)? 0 :this.sentId.hashCode()));
+        result = ((result* 31)+((this.sentenceId == null)? 0 :this.sentenceId.hashCode()));
         result = ((result* 31)+((this.nodes == null)? 0 :this.nodes.hashCode()));
         result = ((result* 31)+((this.scores == null)? 0 :this.scores.hashCode()));
         result = ((result* 31)+((this.labeledBracketing == null)? 0 :this.labeledBracketing.hashCode()));
@@ -174,7 +174,7 @@ public class Constituent {
             return false;
         }
         Constituent rhs = ((Constituent) other);
-        return ((((((this.enumeratedLabeledBracketing == rhs.enumeratedLabeledBracketing)||((this.enumeratedLabeledBracketing!= null)&&this.enumeratedLabeledBracketing.equals(rhs.enumeratedLabeledBracketing)))&&((this.sentId == rhs.sentId)||((this.sentId!= null)&&this.sentId.equals(rhs.sentId))))&&((this.nodes == rhs.nodes)||((this.nodes!= null)&&this.nodes.equals(rhs.nodes))))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))))&&((this.labeledBracketing == rhs.labeledBracketing)||((this.labeledBracketing!= null)&&this.labeledBracketing.equals(rhs.labeledBracketing))));
+        return ((((((this.enumeratedLabeledBracketing == rhs.enumeratedLabeledBracketing)||((this.enumeratedLabeledBracketing!= null)&&this.enumeratedLabeledBracketing.equals(rhs.enumeratedLabeledBracketing)))&&((this.sentenceId == rhs.sentenceId)||((this.sentenceId!= null)&&this.sentenceId.equals(rhs.sentenceId))))&&((this.nodes == rhs.nodes)||((this.nodes!= null)&&this.nodes.equals(rhs.nodes))))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))))&&((this.labeledBracketing == rhs.labeledBracketing)||((this.labeledBracketing!= null)&&this.labeledBracketing.equals(rhs.labeledBracketing))));
     }
 
 }

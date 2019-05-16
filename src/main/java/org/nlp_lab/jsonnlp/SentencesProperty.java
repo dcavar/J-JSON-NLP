@@ -27,7 +27,11 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
     "embeddings",
     "features",
     "scores",
-        "conllId"
+        "conllId",
+        "root",
+        "compound",
+        "transitivity",
+        "negated"
 })
 public class SentencesProperty {
 
@@ -53,21 +57,22 @@ public class SentencesProperty {
      */
     @JsonProperty("mainVerb")
     @JsonPropertyDescription("Token Ids corresponding to the main verb")
-    private List<Integer> mainVerb = new ArrayList<Integer>();
+    //private List<Integer> mainVerb = new ArrayList<Integer>();
+    private ClauseProperty mainVerb = new ClauseProperty();
     /**
      * Token Ids corresponding to the subject
      * 
      */
     @JsonProperty("subject")
     @JsonPropertyDescription("Token Ids corresponding to the subject")
-    private List<Integer> subject = new ArrayList<Integer>();
+    private ClauseProperty subject = new ClauseProperty();
     /**
      * Token Ids corresponding to the object
      * 
      */
     @JsonProperty("object")
     @JsonPropertyDescription("Token Ids corresponding to the object")
-    private List<Integer> object = new ArrayList<Integer>();
+    private ClauseProperty object = new ClauseProperty();
     /**
      * Start token, inclusive
      * (Required)
@@ -131,6 +136,78 @@ public class SentencesProperty {
     private Scores scores;
 
     /**
+     * Root of the sentence
+     *
+     */
+    @JsonProperty("root")
+    @JsonPropertyDescription("Root of the sentence")
+    private int root;
+
+    /**
+     * Root of the sentence
+     *
+     */
+    @JsonProperty("root")
+    public int getRoot() {
+        return root;
+    }
+
+    /**
+     *  Root of the sentence
+     *
+     */
+    @JsonProperty("root")
+    public void setRoot(int root) {
+        this.root = root;
+    }
+
+    /**
+     * Boolean type of sentence
+     *
+     */
+    @JsonProperty("compound")
+    @JsonPropertyDescription("Boolean type of sentence")
+    private boolean compound;
+
+    /**
+     * Boolean type of sentence
+     *
+     */
+    @JsonProperty("compound")
+    public boolean getCompound() {
+        return compound;
+    }
+
+    /**
+     *  Boolean type of sentence
+     *
+     */
+    @JsonProperty("compound")
+    public void setCompound(boolean compound) {
+        this.compound = compound;
+    }
+
+    @JsonProperty("transitivity")
+    @JsonPropertyDescription("Clause type1")
+    private String transitivity;
+
+    @JsonProperty("transitivity")
+    public String getTransitivity() {return transitivity;}
+
+    @JsonProperty("transitivity")
+    public void setTransitivity(String transitivity) {this.transitivity = transitivity;}
+
+    @JsonProperty("negated")
+    @JsonPropertyDescription("Clause type2")
+    private boolean negated;
+
+    @JsonProperty("negated")
+    public boolean getNegated() {return negated;}
+
+    @JsonProperty("negated")
+    public void setNegated(boolean negated) {this.negated = negated;}
+
+    /**
      * Unique sentence ID
      * 
      */
@@ -178,28 +255,30 @@ public class SentencesProperty {
 
     /**
      * Token Ids corresponding to the main verb
-     * 
+     *
      */
+
     @JsonProperty("mainVerb")
-    public List<Integer> getMainVerb() {
+    public ClauseProperty getMainVerb() {
         return mainVerb;
     }
 
     /**
      * Token Ids corresponding to the main verb
-     * 
+     *
      */
     @JsonProperty("mainVerb")
-    public void setMainVerb(List<Integer> mainVerb) {
+    public void setMainVerb(ClauseProperty mainVerb) {
         this.mainVerb = mainVerb;
     }
+
 
     /**
      * Token Ids corresponding to the subject
      * 
      */
     @JsonProperty("subject")
-    public List<Integer> getSubject() {
+    public ClauseProperty getSubject() {
         return subject;
     }
 
@@ -208,7 +287,7 @@ public class SentencesProperty {
      * 
      */
     @JsonProperty("subject")
-    public void setSubject(List<Integer> subject) {
+    public void setSubject(ClauseProperty subject) {
         this.subject = subject;
     }
 
@@ -217,7 +296,7 @@ public class SentencesProperty {
      * 
      */
     @JsonProperty("object")
-    public List<Integer> getObject() {
+    public ClauseProperty getObject() {
         return object;
     }
 
@@ -226,7 +305,7 @@ public class SentencesProperty {
      * 
      */
     @JsonProperty("object")
-    public void setObject(List<Integer> object) {
+    public void setObject(ClauseProperty object) {
         this.object = object;
     }
 

@@ -41,6 +41,30 @@ public class Scores {
     @JsonPropertyDescription("The Named Entity Tag Probability")
     private double entity;
 
+    /**
+     * The Wordnet_ID probability
+     *
+     */
+    @JsonProperty("wordnetId")
+    @JsonPropertyDescription("The Wordnet_ID probability")
+    private double wordnetId;
+
+    /**
+     * The sentiment label probability
+     *
+     */
+    @JsonProperty("label")
+    @JsonPropertyDescription("The sentiment label probability")
+    private double label;
+
+    /**
+     * The expression type probability
+     *
+     */
+    @JsonProperty("type")
+    @JsonPropertyDescription("The expression type probability")
+    private double type;
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
