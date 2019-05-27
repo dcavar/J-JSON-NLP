@@ -98,9 +98,12 @@ public class SentencesProperty {
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("Token id lists cannot be empty")
     private Set<Integer> tokens = new LinkedHashSet<Integer>();
+
     @JsonProperty("clauses")
-    @JsonDeserialize(as = java.util.LinkedHashSet.class)
-    private Set<String> clauses = new LinkedHashSet<String>();
+    @JsonPropertyDescription("List of clauses in the sentence")
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    private List<ClauseProperty> clauses = new ArrayList<>();
+
     /**
      * Classification labels applied to a given section
      * 
@@ -370,13 +373,22 @@ public class SentencesProperty {
     }
 
     @JsonProperty("clauses")
-    public Set<String> getClauses() {
+    public List<ClauseProperty> getClauses() {
         return clauses;
     }
 
     @JsonProperty("clauses")
-    public void setClauses(Set<String> clauses) {
-        this.clauses = clauses;
+    public void setClauses(List<ClauseProperty> clauses) {
+       this.clauses = clauses;
+
+    }
+
+    public void InitClause(){
+        if (this.clauses == null)
+        {
+            List <ClauseProperty> c = new ArrayList<>();
+            this.clauses = c;
+        }
     }
 
     /**

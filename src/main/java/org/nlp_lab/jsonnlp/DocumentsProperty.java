@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "labels",
     "paragraphs",
     "sentences",
-    "clauses",
+    //"clauses",
     "tokenList",
     "dependencies",
     "coreferences",
@@ -83,16 +83,16 @@ public class DocumentsProperty {
     private Map<String, ParagraphsProperty> paragraphs = new HashMap<>();
     @JsonProperty("sentences")
     private Map<String, SentencesProperty> sentences = new HashMap<>();
-    @JsonProperty("clauses")
-    private Clauses clauses;
-    /**
-     * A mapping of tokens objects in the document
-     * (Required)
-     * 
-     */
+    //@JsonProperty("clauses")
+    //private Clauses clauses;
+    ///**
+     //* A mapping of tokens objects in the document
+     //* (Required)
+     //*
+     //*/
     @JsonProperty("tokenList")
     @JsonPropertyDescription("A mapping of tokens objects in the document")
-    private Map<String, TokenListProperty> tokenList = new HashMap<>();
+    private List<TokenListProperty> tokenList = new ArrayList<>();
     /**
      * Dependency graphs of any style
      * 
@@ -250,15 +250,15 @@ public class DocumentsProperty {
         this.sentences = sentences;
     }
 
-    @JsonProperty("clauses")
-    public Clauses getClauses() {
-        return clauses;
-    }
+    //@JsonProperty("clauses")
+    //public Clauses getClauses() {
+      //  return clauses;
+    //}
 
-    @JsonProperty("clauses")
-    public void setClauses(Clauses clauses) {
-        this.clauses = clauses;
-    }
+    //@JsonProperty("clauses")
+    //public void setClauses(Clauses clauses) {
+     //   this.clauses = clauses;
+    //}
 
     /**
      * A mapping of tokens objects in the document
@@ -266,7 +266,7 @@ public class DocumentsProperty {
      * 
      */
     @JsonProperty("tokenList")
-    public Map<String, TokenListProperty> getTokenList() {
+    public List<TokenListProperty> getTokenList() {
         return tokenList;
     }
 
@@ -276,7 +276,7 @@ public class DocumentsProperty {
      * 
      */
     @JsonProperty("tokenList")
-    public void setTokenList(Map<String, TokenListProperty> tokenList) {
+    public void setTokenList(List<TokenListProperty> tokenList) {
         this.tokenList = tokenList;
     }
 
@@ -376,9 +376,9 @@ public class DocumentsProperty {
         sb.append('=');
         sb.append(((this.sentences == null)?"<null>":this.sentences));
         sb.append(',');
-        sb.append("clauses");
-        sb.append('=');
-        sb.append(((this.clauses == null)?"<null>":this.clauses));
+        //sb.append("clauses");
+        //sb.append('=');
+        //sb.append(((this.clauses == null)?"<null>":this.clauses));
         sb.append(',');
         sb.append("tokenList");
         sb.append('=');
@@ -414,7 +414,7 @@ public class DocumentsProperty {
         result = ((result* 31)+((this.embeddings == null)? 0 :this.embeddings.hashCode()));
         result = ((result* 31)+((this.scores == null)? 0 :this.scores.hashCode()));
         result = ((result* 31)+((this.sentences == null)? 0 :this.sentences.hashCode()));
-        result = ((result* 31)+((this.clauses == null)? 0 :this.clauses.hashCode()));
+        //result = ((result* 31)+((this.clauses == null)? 0 :this.clauses.hashCode()));
         result = ((result* 31)+((this.paragraphs == null)? 0 :this.paragraphs.hashCode()));
         result = ((result* 31)+((this.expressions == null)? 0 :this.expressions.hashCode()));
         result = ((result* 31)+((this.labels == null)? 0 :this.labels.hashCode()));
@@ -438,7 +438,7 @@ public class DocumentsProperty {
             return false;
         }
         DocumentsProperty rhs = ((DocumentsProperty) other);
-        return ((((((((((((((((this.embeddings == rhs.embeddings)||((this.embeddings!= null)&&this.embeddings.equals(rhs.embeddings)))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))))&&((this.sentences == rhs.sentences)||((this.sentences!= null)&&this.sentences.equals(rhs.sentences))))&&((this.clauses == rhs.clauses)||((this.clauses!= null)&&this.clauses.equals(rhs.clauses))))&&((this.paragraphs == rhs.paragraphs)||((this.paragraphs!= null)&&this.paragraphs.equals(rhs.paragraphs))))&&((this.expressions == rhs.expressions)||((this.expressions!= null)&&this.expressions.equals(rhs.expressions))))&&((this.labels == rhs.labels)||((this.labels!= null)&&this.labels.equals(rhs.labels))))&&((this.dependencies == rhs.dependencies)||((this.dependencies!= null)&&this.dependencies.equals(rhs.dependencies))))&&((this.features == rhs.features)||((this.features!= null)&&this.features.equals(rhs.features))))&&((this.meta == rhs.meta)||((this.meta!= null)&&this.meta.equals(rhs.meta))))&&((this.id == rhs.id)))&&((this.text == rhs.text)||((this.text!= null)&&this.text.equals(rhs.text))))&&((this.tokenList == rhs.tokenList)||((this.tokenList!= null)&&this.tokenList.equals(rhs.tokenList))))&&((this.coreferences == rhs.coreferences)||((this.coreferences!= null)&&this.coreferences.equals(rhs.coreferences))))&&((this.constituents == rhs.constituents)||((this.constituents!= null)&&this.constituents.equals(rhs.constituents))));
+        return ((((((((((((((((this.embeddings == rhs.embeddings)||((this.embeddings!= null)&&this.embeddings.equals(rhs.embeddings)))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))))&&((this.sentences == rhs.sentences)||((this.sentences!= null)&&this.sentences.equals(rhs.sentences)))))&&((this.paragraphs == rhs.paragraphs)||((this.paragraphs!= null)&&this.paragraphs.equals(rhs.paragraphs))))&&((this.expressions == rhs.expressions)||((this.expressions!= null)&&this.expressions.equals(rhs.expressions))))&&((this.labels == rhs.labels)||((this.labels!= null)&&this.labels.equals(rhs.labels))))&&((this.dependencies == rhs.dependencies)||((this.dependencies!= null)&&this.dependencies.equals(rhs.dependencies))))&&((this.features == rhs.features)||((this.features!= null)&&this.features.equals(rhs.features))))&&((this.meta == rhs.meta)||((this.meta!= null)&&this.meta.equals(rhs.meta))))&&((this.id == rhs.id)))&&((this.text == rhs.text)||((this.text!= null)&&this.text.equals(rhs.text))))&&((this.tokenList == rhs.tokenList)||((this.tokenList!= null)&&this.tokenList.equals(rhs.tokenList))))&&((this.coreferences == rhs.coreferences)||((this.coreferences!= null)&&this.coreferences.equals(rhs.coreferences))))&&((this.constituents == rhs.constituents)||((this.constituents!= null)&&this.constituents.equals(rhs.constituents))));
     }
 
 }
