@@ -157,6 +157,8 @@ public class SentencesProperty {
         return root;
     }
 
+
+
     /**
      *  Root of the sentence
      *
@@ -384,9 +386,8 @@ public class SentencesProperty {
     }
 
     public void InitClause(){
-        if (this.clauses == null)
-        {
-            List <ClauseProperty> c = new ArrayList<>();
+        if (this.clauses == null) {
+            List<ClauseProperty> c = new ArrayList<>();
             this.clauses = c;
         }
     }
