@@ -8,23 +8,21 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "sentenceId",
-    "label",
-    "governor",
-    "dependent",
+    //"sentenceId",
+    "lab",
+    "gov",
+    "dep",
     "scores"
 })
 public class ArcsProperty {
 
-    @JsonProperty("sentenceId")
-    private String sentenceId;
     /**
      * 
      * (Required)
      * 
      */
     @JsonProperty("label")
-    private String label;
+    private String lab;
     /**
      * Token Id corresponding to the governor
      * (Required)
@@ -32,14 +30,14 @@ public class ArcsProperty {
      */
     @JsonProperty("governor")
     @JsonPropertyDescription("Token Id corresponding to the governor")
-    private Integer governor;
+    private Integer gov;
     /**
      * Token Id corresponding to the dependent
      * 
      */
     @JsonProperty("dependent")
     @JsonPropertyDescription("Token Id corresponding to the dependent")
-    private Integer dependent;
+    private Integer dep;
     /**
      * Confidence levels of a particular attribute
      * 
@@ -48,15 +46,6 @@ public class ArcsProperty {
     @JsonPropertyDescription("Confidence levels of a particular attribute")
     private Scores scores;
 
-    @JsonProperty("sentenceId")
-    public String getSentenceId() {
-        return sentenceId;
-    }
-
-    @JsonProperty("sentenceId")
-    public void setSentenceId(String sentenceId) {
-        this.sentenceId = sentenceId;
-    }
 
     /**
      * 
@@ -65,7 +54,7 @@ public class ArcsProperty {
      */
     @JsonProperty("label")
     public String getLabel() {
-        return label;
+        return lab;
     }
 
     /**
@@ -75,7 +64,7 @@ public class ArcsProperty {
      */
     @JsonProperty("label")
     public void setLabel(String label) {
-        this.label = label;
+        this.lab = label;
     }
 
     /**
@@ -85,7 +74,7 @@ public class ArcsProperty {
      */
     @JsonProperty("governor")
     public Integer getGovernor() {
-        return governor;
+        return gov;
     }
 
     /**
@@ -95,7 +84,7 @@ public class ArcsProperty {
      */
     @JsonProperty("governor")
     public void setGovernor(Integer governor) {
-        this.governor = governor;
+        this.gov = governor;
     }
 
     /**
@@ -104,7 +93,7 @@ public class ArcsProperty {
      */
     @JsonProperty("dependent")
     public Integer getDependent() {
-        return dependent;
+        return dep;
     }
 
     /**
@@ -113,7 +102,7 @@ public class ArcsProperty {
      */
     @JsonProperty("dependent")
     public void setDependent(Integer dependent) {
-        this.dependent = dependent;
+        this.dep = dependent;
     }
 
     /**
@@ -140,19 +129,19 @@ public class ArcsProperty {
         sb.append(ArcsProperty.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("sentenceId");
         sb.append('=');
-        sb.append(((this.sentenceId == null)?"<null>":this.sentenceId));
+        //sb.append(((this.sentenceId == null)?"<null>":this.sentenceId));
         sb.append(',');
         sb.append("label");
         sb.append('=');
-        sb.append(((this.label == null)?"<null>":this.label));
+        sb.append(((this.lab == null)?"<null>":this.lab));
         sb.append(',');
         sb.append("governor");
         sb.append('=');
-        sb.append(((this.governor == null)?"<null>":this.governor));
+        sb.append(((this.gov == null)?"<null>":this.gov));
         sb.append(',');
         sb.append("dependent");
         sb.append('=');
-        sb.append(((this.dependent == null)?"<null>":this.dependent));
+        sb.append(((this.dep == null)?"<null>":this.dep));
         sb.append(',');
         sb.append("scores");
         sb.append('=');
@@ -169,10 +158,10 @@ public class ArcsProperty {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.sentenceId == null)? 0 :this.sentenceId.hashCode()));
-        result = ((result* 31)+((this.label == null)? 0 :this.label.hashCode()));
-        result = ((result* 31)+((this.governor == null)? 0 :this.governor.hashCode()));
-        result = ((result* 31)+((this.dependent == null)? 0 :this.dependent.hashCode()));
+        //result = ((result* 31)+((this.sentenceId == null)? 0 :this.sentenceId.hashCode()));
+        result = ((result* 31)+((this.lab == null)? 0 :this.lab.hashCode()));
+        result = ((result* 31)+((this.gov == null)? 0 :this.gov.hashCode()));
+        result = ((result* 31)+((this.dep == null)? 0 :this.dep.hashCode()));
         result = ((result* 31)+((this.scores == null)? 0 :this.scores.hashCode()));
         return result;
     }
@@ -186,7 +175,7 @@ public class ArcsProperty {
             return false;
         }
         ArcsProperty rhs = ((ArcsProperty) other);
-        return ((((((this.sentenceId == rhs.sentenceId)||((this.sentenceId!= null)&&this.sentenceId.equals(rhs.sentenceId)))&&((this.label == rhs.label)||((this.label!= null)&&this.label.equals(rhs.label))))&&((this.governor == rhs.governor)||((this.governor!= null)&&this.governor.equals(rhs.governor))))&&((this.dependent == rhs.dependent)||((this.dependent!= null)&&this.dependent.equals(rhs.dependent))))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))));
+        return ((((((this.lab == rhs.lab)||((this.lab!= null)&&this.lab.equals(rhs.lab))))&&((this.gov == rhs.gov)||((this.gov!= null)&&this.gov.equals(rhs.gov))))&&((this.dep == rhs.dep)||((this.dep!= null)&&this.dep.equals(rhs.dep))))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))));
     }
 
 }
