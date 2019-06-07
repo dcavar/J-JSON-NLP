@@ -32,21 +32,29 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 public class ClauseProperty {
 
-    @JsonProperty("clause_id")
+    @JsonProperty("id")
     @JsonPropertyDescription("Id of the Clause")
     private int clause_id;
 
     @JsonProperty("head")
-    @JsonPropertyDescription("Head of the mainVerb")
+    @JsonPropertyDescription("Head of the clause (predicate, verb, etc.)")
     private int head;
 
-    @JsonProperty("dominated_by")
+    @JsonProperty("sentenceId")
     @JsonPropertyDescription("Id of the parent clause")
     private int dominated_by;
+
+    @JsonProperty("dominates")
+    @JsonPropertyDescription("List of clauses that a clause dominates")
+    private List<Integer> dominates = new ArrayList<>();
 
     @JsonProperty("clause_type")
     @JsonPropertyDescription("Type of the clause")
     private String clause_type;
+
+    @JsonProperty("clause")
+    @JsonPropertyDescription("List of tokens in the clause")
+    private List<Integer> clause = new ArrayList<>();
 
     @JsonProperty("clause")
     @JsonPropertyDescription("List of tokens in the clause")
@@ -90,6 +98,11 @@ public class ClauseProperty {
     @JsonProperty("dominated_by")
     public void setParentClause(int dominated_by) {
         this.dominated_by = dominated_by;
+    }
+
+    @JsonProperty("dominates")
+    public void addChildClause(int dominates) {
+        this.dominates.add(dominates);
     }
 
     @JsonProperty("clause_type")
