@@ -36,53 +36,91 @@ public class ClauseProperty {
     @JsonPropertyDescription("Id of the Clause")
     private int clause_id;
 
-    @JsonProperty("head")
+    @JsonProperty("root")
     @JsonPropertyDescription("Head of the clause (predicate, verb, etc.)")
     private int head;
 
     @JsonProperty("sentenceId")
-    @JsonPropertyDescription("Id of the parent clause")
+    @JsonPropertyDescription("Id of the sentence that contains this clause")
+    private int sentence_id;
+
+    @JsonProperty("parentClauseId")
+    @JsonPropertyDescription("Id of the parent clause, which is the selecting clause of a subordinate clause, for example.")
     private int dominated_by;
 
     @JsonProperty("dominates")
-    @JsonPropertyDescription("List of clauses that a clause dominates")
+    @JsonPropertyDescription("List of clauses that this clause dominates.")
     private List<Integer> dominates = new ArrayList<>();
 
-    @JsonProperty("clause_type")
-    @JsonPropertyDescription("Type of the clause")
-    private String clause_type;
+    @JsonProperty("type")
+    @JsonPropertyDescription("Type of the clause, one of matrix, complement, relative, adverbial, adjectival, subject")
+    private String type;
+
+    @JsonProperty("tense")
+    @JsonPropertyDescription("Tense of the clause, one of past, present, future, past-perfect, future-perfect")
+    private String tense;
+
+    @JsonProperty("transitivity")
+    @JsonPropertyDescription("Transitivity of the clause, one of transitive, intransitive, ditransitive")
+    private String transitivity;
+
+    @JsonProperty("negated")
+    @JsonPropertyDescription("Does the clause have a clause level negation")
+    private boolean negated;
 
     @JsonProperty("clause")
     @JsonPropertyDescription("List of tokens in the clause")
     private List<Integer> clause = new ArrayList<>();
 
-    @JsonProperty("clause")
-    @JsonPropertyDescription("List of tokens in the clause")
-    private List<Integer> clause = new ArrayList<>();
 
-    @JsonProperty("clause_id")
+    @JsonProperty("id")
     public int getClause_id() {
         return this.clause_id;
     }
 
-    @JsonProperty("head")
+    @JsonProperty("root")
     public int getHead() {
-        return head;
+        return this.head;
     }
 
-    @JsonProperty("dominated_by")
+    @JsonProperty("sentenceId")
+    public int getSentenceId() {
+        return this.sentence_id;
+    }
+
+    @JsonProperty("parentClauseId")
     public int getParentClause() {
-        return dominated_by;
+        return this.dominated_by;
     }
 
-    @JsonProperty("clause_type")
-    public String getClausetype() {
-        return clause_type;
+    @JsonProperty("dominates")
+    public List<Integer> getChildClauses() {
+        return this.dominates;
+    }
+
+    @JsonProperty("type")
+    public String getType() {
+        return this.type;
+    }
+
+    @JsonProperty("tense")
+    public String getTense() {
+        return this.tense;
+    }
+
+    @JsonProperty("transitivity")
+    public String getTransitivity() {
+        return this.transitivity;
+    }
+
+    @JsonProperty("negated")
+    public boolean isNegated() {
+        return this.negated;
     }
 
     @JsonProperty("clause")
     public List<Integer> getClause() {
-        return clause;
+        return this.clause;
     }
 
     @JsonProperty("clause_id")
@@ -105,9 +143,9 @@ public class ClauseProperty {
         this.dominates.add(dominates);
     }
 
-    @JsonProperty("clause_type")
+    @JsonProperty("type")
     public void setClausetype(String clause_type) {
-        this.clause_type = clause_type;
+        this.type = clause_type;
     }
 
     @JsonProperty("clause")
