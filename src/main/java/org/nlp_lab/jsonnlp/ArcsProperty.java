@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 
 package org.nlp_lab.jsonnlp;
 
@@ -5,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -14,6 +18,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "dep",
     "scores"
 })
+
+
 public class ArcsProperty {
 
     /**
@@ -21,21 +27,22 @@ public class ArcsProperty {
      * (Required)
      * 
      */
-    @JsonProperty("label")
+    @JsonProperty("lab")
+    @JsonPropertyDescription("Label of the dependency.")
     private String lab;
     /**
      * Token Id corresponding to the governor
      * (Required)
      * 
      */
-    @JsonProperty("governor")
+    @JsonProperty("gov")
     @JsonPropertyDescription("Token Id corresponding to the governor")
     private Integer gov;
     /**
      * Token Id corresponding to the dependent
      * 
      */
-    @JsonProperty("dependent")
+    @JsonProperty("dep")
     @JsonPropertyDescription("Token Id corresponding to the dependent")
     private Integer dep;
     /**
@@ -52,7 +59,7 @@ public class ArcsProperty {
      * (Required)
      * 
      */
-    @JsonProperty("label")
+    @JsonProperty("lab")
     public String getLabel() {
         return lab;
     }
@@ -62,7 +69,7 @@ public class ArcsProperty {
      * (Required)
      * 
      */
-    @JsonProperty("label")
+    @JsonProperty("lab")
     public void setLabel(String label) {
         this.lab = label;
     }
@@ -72,7 +79,7 @@ public class ArcsProperty {
      * (Required)
      * 
      */
-    @JsonProperty("governor")
+    @JsonProperty("gov")
     public Integer getGovernor() {
         return gov;
     }
@@ -82,7 +89,7 @@ public class ArcsProperty {
      * (Required)
      * 
      */
-    @JsonProperty("governor")
+    @JsonProperty("gov")
     public void setGovernor(Integer governor) {
         this.gov = governor;
     }
@@ -91,7 +98,7 @@ public class ArcsProperty {
      * Token Id corresponding to the dependent
      * 
      */
-    @JsonProperty("dependent")
+    @JsonProperty("dep")
     public Integer getDependent() {
         return dep;
     }
@@ -100,7 +107,7 @@ public class ArcsProperty {
      * Token Id corresponding to the dependent
      * 
      */
-    @JsonProperty("dependent")
+    @JsonProperty("dep")
     public void setDependent(Integer dependent) {
         this.dep = dependent;
     }
@@ -131,15 +138,15 @@ public class ArcsProperty {
         sb.append('=');
         //sb.append(((this.sentenceId == null)?"<null>":this.sentenceId));
         sb.append(',');
-        sb.append("label");
+        sb.append("lab");
         sb.append('=');
         sb.append(((this.lab == null)?"<null>":this.lab));
         sb.append(',');
-        sb.append("governor");
+        sb.append("gov");
         sb.append('=');
         sb.append(((this.gov == null)?"<null>":this.gov));
         sb.append(',');
-        sb.append("dependent");
+        sb.append("dep");
         sb.append('=');
         sb.append(((this.dep == null)?"<null>":this.dep));
         sb.append(',');

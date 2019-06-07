@@ -99,7 +99,7 @@ public class DocumentsProperty {
      */
     @JsonProperty("dependencies")
     @JsonPropertyDescription("Dependency graphs of any style")
-    private List<Dependency> dependencies = new ArrayList<Dependency>();
+    private Dependency dependencies; 
     @JsonProperty("coreferences")
     private List<Coreference> coreferences = new ArrayList<Coreference>();
     @JsonProperty("constituents")
@@ -285,7 +285,7 @@ public class DocumentsProperty {
      * 
      */
     @JsonProperty("dependencies")
-    public List<Dependency> getDependencies() {
+    public Dependency getDependencies() {
         return dependencies;
     }
 
@@ -294,7 +294,7 @@ public class DocumentsProperty {
      * 
      */
     @JsonProperty("dependencies")
-    public void setDependencies(List<Dependency> dependencies) {
+    public void setDependencies(Dependency dependencies) {
         this.dependencies = dependencies;
     }
 

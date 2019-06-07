@@ -14,8 +14,9 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "style",
-    "arcs"
+    "trees"
 })
+
 public class Dependency {
 
     /**
@@ -30,10 +31,10 @@ public class Dependency {
      * (Required)
      * 
      */
-    @JsonProperty("arcs")
+    @JsonProperty("trees")
     @JsonPropertyDescription("A mapping of dependent token id to a list of governors")
     //private Map<String, List<ArcsProperty>> arcs = new HashMap<>();
-    private List<ArcsProperty> arcs = new ArrayList<>();
+    private List<ArcsProperty> trees = new ArrayList<>();
     /**
      * 
      * (Required)
@@ -60,8 +61,8 @@ public class Dependency {
      * 
      */
     @JsonProperty("arcs")
-    public List<ArcsProperty> getArcs() {
-        return arcs;
+    public List<ArcsProperty> getTrees() {
+        return trees;
     }
 
     /**
@@ -70,8 +71,8 @@ public class Dependency {
      * 
      */
     @JsonProperty("arcs")
-    public void setArcs(List<ArcsProperty> arcs) {
-        this.arcs = arcs;
+    public void setTrees(List<ArcsProperty> trees) {
+        this.trees = trees;
     }
 
     @Override
@@ -82,9 +83,9 @@ public class Dependency {
         sb.append('=');
         sb.append(((this.style == null)?"<null>":this.style));
         sb.append(',');
-        sb.append("arcs");
+        sb.append("trees");
         sb.append('=');
-        sb.append(((this.arcs == null)?"<null>":this.arcs));
+        sb.append(((this.trees == null)?"<null>":this.trees));
         sb.append(',');
         if (sb.charAt((sb.length()- 1)) == ',') {
             sb.setCharAt((sb.length()- 1), ']');
@@ -97,7 +98,7 @@ public class Dependency {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.arcs == null)? 0 :this.arcs.hashCode()));
+        result = ((result* 31)+((this.trees == null)? 0 :this.trees.hashCode()));
         result = ((result* 31)+((this.style == null)? 0 :this.style.hashCode()));
         return result;
     }
@@ -111,7 +112,7 @@ public class Dependency {
             return false;
         }
         Dependency rhs = ((Dependency) other);
-        return (((this.arcs == rhs.arcs)||((this.arcs!= null)&&this.arcs.equals(rhs.arcs)))&&((this.style == rhs.style)||((this.style!= null)&&this.style.equals(rhs.style))));
+        return (((this.trees == rhs.trees)||((this.trees!= null)&&this.trees.equals(rhs.trees)))&&((this.style == rhs.style)||((this.style!= null)&&this.style.equals(rhs.style))));
     }
 
 }
