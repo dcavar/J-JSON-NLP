@@ -1,9 +1,13 @@
+/**
+ * 
+ */
+
 package org.nlp_lab.jsonnlp;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+//import java.util.HashMap;
+//import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,21 +17,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "head",
-        //"semantic",
-        //"phrase"
-        "clause_id",
-        "dominated_by",
-        "clause_type",
-        "clause"
-
+    "id",
+    "root",
+    "sentenceId",
+    "parentClauseId",
+    "dominates",
+    "type",
+    "tense",
+    "transitivity",
+    "negated",
+    "clause"
 })
-
-//public int clause_id;
-//public int head;
-//public int dominated_by;
-//public String clause_type;
-//public List<Integer> clause = new ArrayList<>();
 
 
 public class ClauseProperty {
@@ -123,116 +123,54 @@ public class ClauseProperty {
         return this.clause;
     }
 
-    @JsonProperty("clause_id")
+    @JsonProperty("id")
     public void setClause_id(int clause_id ) {
         this.clause_id = clause_id;
     }
 
-    @JsonProperty("head")
+    @JsonProperty("root")
     public void setHead( int head) {
         this.head = head;
     }
 
-    @JsonProperty("dominated_by")
+    @JsonProperty("parentClauseId")
     public void setParentClause(int dominated_by) {
         this.dominated_by = dominated_by;
     }
 
     @JsonProperty("dominates")
-    public void addChildClause(int dominates) {
+    public void setChildClause(int dominates) {
         this.dominates.add(dominates);
     }
 
+    @JsonProperty("dominates")
+    public void setChildClause(List<Integer> dominates) {
+        this.dominates = dominates;
+    }
+
     @JsonProperty("type")
-    public void setClausetype(String clause_type) {
+    public void setType(String clause_type) {
         this.type = clause_type;
+    }
+
+    @JsonProperty("tense")
+    public void setTense(String tense) {
+        this.tense = tense;
+    }
+    
+    @JsonProperty("transitivity")
+    public void setTransitivity(String transitivity) {
+        this.transitivity = transitivity;
+    }
+
+    @JsonProperty("negated")
+    public void setClausetype(boolean negated) {
+        this.negated = negated;
     }
 
     @JsonProperty("clause")
     public void setClause( List<Integer> clause) {
         this.clause = clause;
-        //for(int i=0;i<clause.size();i++) {
-        //    this.clause.add(clause.get(i));
-        //}
     }
 
-    /*    /**
-     * Head of the mainVerb
-     *
-
-  //  @JsonProperty("head")
-  //  @JsonPropertyDescription("Head of the mainVerb")
-    private int head;
-
-    /**
-     * List of semantics
-     *
-
-    @JsonProperty("semantic")
-    @JsonPropertyDescription("List of semantics")
-    private List<Integer> semantic = new ArrayList<Integer>();
-
-    /**
-     * List of tokens in the phrase
-     *
-
-    @JsonProperty("phrase")
-    @JsonPropertyDescription("List of tokens in the phrase")
-    private List<Integer> phrase = new ArrayList<Integer>();
-
-    /**
-     * Head of the mainVerb
-     *
-
-    @JsonProperty("head")
-    public int getHead() {
-        return head;
-    }
-
-    /**
-     *  Head of the mainVerb
-     *
-
-    @JsonProperty("head")
-    public void setHead(int head) {
-        this.head = head;
-    }
-
-    /**
-     * List of semantics
-     *
-
-    @JsonProperty("semantic")
-    public List<Integer> getSemantic() {
-        return semantic;
-    }
-
-    /**
-     * List of semantics
-     *
-
-    @JsonProperty("semantic")
-    public void setSemantic(List<Integer> semantic) {
-        this.semantic = semantic;
-    }
-
-    /**
-     * List of tokens in the phrase
-     *
-
-    @JsonProperty("phrase")
-    public List<Integer> getPhrase() {
-        return phrase;
-    }
-
-    /**
-     * List of tokens in the phrase
-     *
-
-    @JsonProperty("phrase")
-    public void setPhrase(List<Integer> phrase) {
-        this.phrase = phrase;
-    }
-
-*/
 }
