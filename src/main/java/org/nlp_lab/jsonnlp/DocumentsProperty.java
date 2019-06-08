@@ -83,8 +83,8 @@ public class DocumentsProperty {
     private Map<String, ParagraphsProperty> paragraphs = new HashMap<>();
     @JsonProperty("sentences")
     private Map<String, SentencesProperty> sentences = new HashMap<>();
-    //@JsonProperty("clauses")
-    //private Clauses clauses;
+    @JsonProperty("clauses")
+    private List<ClauseProperty> clauses;
     ///**
      //* A mapping of tokens objects in the document
      //* (Required)
@@ -250,15 +250,15 @@ public class DocumentsProperty {
         this.sentences = sentences;
     }
 
-    //@JsonProperty("clauses")
-    //public Clauses getClauses() {
-      //  return clauses;
-    //}
+    @JsonProperty("clauses")
+    public List<ClauseProperty> getClauses() {
+        return clauses;
+    }
 
-    //@JsonProperty("clauses")
-    //public void setClauses(Clauses clauses) {
-     //   this.clauses = clauses;
-    //}
+    @JsonProperty("clauses")
+    public void setClauses(List<ClauseProperty> clauses) {
+        this.clauses = clauses;
+    }
 
     /**
      * A mapping of tokens objects in the document
