@@ -17,6 +17,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
+    "sentence_id",
     "text", "frames",
     "features",
     "misc",
@@ -169,6 +170,17 @@ public class TokenListProperty {
     @JsonProperty("labels")
     @JsonPropertyDescription("Classification labels applied to a given section")
     private List<Label> labels = new ArrayList<Label>();
+
+    @JsonProperty("sentence_id")
+    private Integer sentence_id ;
+
+    public Integer getSentenceId(){
+        return this.sentence_id;
+    }
+
+    public void setSentenceId(Integer sentence_id){
+        this.sentence_id = sentence_id;
+    }
 
     /**
      * Token ids start from 1, and are cumulative for the entire document.
