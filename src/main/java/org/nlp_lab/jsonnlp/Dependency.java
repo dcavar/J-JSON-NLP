@@ -34,7 +34,7 @@ public class Dependency {
     @JsonProperty("trees")
     @JsonPropertyDescription("A mapping of dependent token id to a list of governors")
     //private Map<String, List<ArcsProperty>> arcs = new HashMap<>();
-    private List<List<ArcsProperty>> trees = new ArrayList<>();
+    private List<ArcsProperty> trees = new ArrayList<>();
     /**
      * 
      * (Required)
@@ -61,7 +61,7 @@ public class Dependency {
      * 
      */
     @JsonProperty("arcs")
-    public List<List<ArcsProperty>> getTrees() {
+    public List<ArcsProperty> getTrees() {
         return trees;
     }
 
@@ -71,7 +71,7 @@ public class Dependency {
      * 
      */
     @JsonProperty("arcs")
-    public void setTrees(List<List<ArcsProperty>> trees) {
+    public void setTrees(List<ArcsProperty> trees) {
         this.trees = trees;
     }
 
