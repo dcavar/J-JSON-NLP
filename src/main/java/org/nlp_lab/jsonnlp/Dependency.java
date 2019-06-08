@@ -108,9 +108,8 @@ public class Dependency {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Dependency) == false) {
-            return false;
-        }
+        if (!(other instanceof Dependency)) return false;
+
         Dependency rhs = ((Dependency) other);
         return (((this.trees == rhs.trees)||((this.trees!= null)&&this.trees.equals(rhs.trees)))&&((this.style == rhs.style)||((this.style!= null)&&this.style.equals(rhs.style))));
     }
