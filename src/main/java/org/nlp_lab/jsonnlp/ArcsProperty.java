@@ -166,23 +166,25 @@ public class ArcsProperty {
     public int hashCode() {
         int result = 1;
         //result = ((result* 31)+((this.sentenceId == null)? 0 :this.sentenceId.hashCode()));
-        result = ((result* 31)+((this.lab == null)? 0 :this.lab.hashCode()));
-        result = ((result* 31)+((this.gov == null)? 0 :this.gov.hashCode()));
-        result = ((result* 31)+((this.dep == null)? 0 :this.dep.hashCode()));
-        result = ((result* 31)+((this.scores == null)? 0 :this.scores.hashCode()));
-        return result;
+        result = ((result * 31) + ((this.lab == null) ? 0 : this.lab.hashCode()));
+        result = ((result * 31) + ((this.gov == null) ? 0 : this.gov.hashCode()));
+        result = ((result * 31) + ((this.dep == null) ? 0 : this.dep.hashCode()));
+        return ((result * 31) + ((this.scores == null) ? 0 : this.scores.hashCode()));
+        //return result;
     }
 
     @Override
     public boolean equals(Object other) {
-        if (other == this) {
-            return true;
-        }
-        if ((other instanceof ArcsProperty) == false) {
-            return false;
-        }
-        ArcsProperty rhs = ((ArcsProperty) other);
-        return ((((((this.lab == rhs.lab)||((this.lab!= null)&&this.lab.equals(rhs.lab))))&&((this.gov == rhs.gov)||((this.gov!= null)&&this.gov.equals(rhs.gov))))&&((this.dep == rhs.dep)||((this.dep!= null)&&this.dep.equals(rhs.dep))))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))));
+        if (other == this) return true;
+        if (!(other instanceof ArcsProperty)) return false;
+
+        ArcsProperty rhs = (ArcsProperty)other;
+        // TODO (string1 == string2) returns 0 !
+        return ((((( this.lab.equals(rhs.lab) || ((this.lab != null) &&
+                this.lab.equals(rhs.lab)))) &&
+                (this.gov.equals(rhs.gov) || ((this.gov!= null) && this.gov.equals(rhs.gov)))) &&
+                ((this.dep.equals(rhs.dep)) || ((this.dep!= null) && this.dep.equals(rhs.dep)))) &&
+                ((this.scores == rhs.scores) || ((this.scores!= null) && this.scores.equals(rhs.scores))));
     }
 
 }

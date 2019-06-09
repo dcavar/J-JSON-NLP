@@ -1,3 +1,6 @@
+/**
+ *
+ */
 
 package org.nlp_lab.jsonnlp;
 
@@ -7,15 +10,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+//import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+//import java.util.Map;
+
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "style",
     "trees"
 })
+
 
 public class Dependency {
 
@@ -98,9 +103,9 @@ public class Dependency {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.trees == null)? 0 :this.trees.hashCode()));
-        result = ((result* 31)+((this.style == null)? 0 :this.style.hashCode()));
-        return result;
+        result = ((result * 31) + ((this.trees == null) ? 0 : this.trees.hashCode()));
+        return ((result * 31) + ((this.style == null) ? 0 : this.style.hashCode()));
+        //return result;
     }
 
     @Override
