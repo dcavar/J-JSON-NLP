@@ -105,9 +105,7 @@ public class Dependency {
 
     @Override
     public boolean equals(Object other) {
-        if (other == this) {
-            return true;
-        }
+        if (other == this) return true;
         if (!(other instanceof Dependency)) return false;
 
         Dependency rhs = ((Dependency) other);
