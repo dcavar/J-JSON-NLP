@@ -164,7 +164,7 @@ public class ClauseProperty {
     }
 
     @JsonProperty("negated")
-    public void setClausetype(boolean negated) {
+    public void setNegation(boolean negated) {
         this.negated = negated;
     }
 
