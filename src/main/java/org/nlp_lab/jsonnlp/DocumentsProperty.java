@@ -6,10 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.*;
+import org.javatuples.Pair;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -27,7 +25,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "dependencies",
     "coreferences",
     "constituents",
-    "expressions"
+    "expressions",
+        "dependencymap"
 })
 
 
@@ -111,6 +110,22 @@ public class DocumentsProperty {
     @JsonProperty("expressions")
     @JsonPropertyDescription("Multi-word expressions, idioms, etc.")
     private List<Expression> expressions = new ArrayList<Expression>();
+
+
+    @JsonProperty("dependencymap")
+    @JsonPropertyDescription("Dependency in HashMap")
+    private Map<String, List<Pair<Integer, Integer>>> deps = new HashMap<>();
+
+    @JsonProperty("dependencymap")
+    public Map<String, List<Pair<Integer, Integer>>> getDepsMap(){
+        return this.deps;
+    }
+
+    @JsonProperty("dependencymap")
+    public void setDepsMap( Map<String, List<Pair<Integer, Integer>>> deps){
+        this.deps = deps;
+    }
+
 
     /**
      * Document ID
