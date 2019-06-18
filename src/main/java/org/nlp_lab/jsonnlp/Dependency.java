@@ -76,7 +76,7 @@ public class Dependency {
      * 
      */
     @JsonProperty("arcs")
-    public void setTrees(List<ArrayList<ArcsProperty>> trees) {
+    public void setTrees(List<List<ArcsProperty>> trees) {
         this.trees = trees;
     }
 
