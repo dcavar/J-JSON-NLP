@@ -66,7 +66,7 @@ public class Dependency {
      * 
      */
     @JsonProperty("arcs")
-    public List<List<ArcsProperty>> getTrees() {
+    public List<ArrayList<ArcsProperty>> getTrees() {
         return trees;
     }
 
