@@ -19,7 +19,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "id",
     "root",
-    "sentenceId",
     "parentClauseId",
     "dominates",
     "type",
@@ -39,10 +38,6 @@ public class ClauseProperty {
     @JsonProperty("root")
     @JsonPropertyDescription("Head of the clause (predicate, verb, etc.)")
     private int head;
-
-    @JsonProperty("sentenceId")
-    @JsonPropertyDescription("Id of the sentence that contains this clause")
-    private int sentence_id;
 
     @JsonProperty("parentClauseId")
     @JsonPropertyDescription("Id of the parent clause, which is the selecting clause of a subordinate clause, for example.")
@@ -81,11 +76,6 @@ public class ClauseProperty {
     @JsonProperty("root")
     public int getHead() {
         return this.head;
-    }
-
-    @JsonProperty("sentenceId")
-    public int getSentenceId() {
-        return this.sentence_id;
     }
 
     @JsonProperty("parentClauseId")
