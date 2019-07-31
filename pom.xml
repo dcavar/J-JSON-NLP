@@ -21,8 +21,6 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-
-		<!-- Jackson API -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>

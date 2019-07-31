@@ -1,4 +1,9 @@
-
+/**
+ * DocumentsProperty.java
+ *
+ * (C) 2019 by Damir Cavar
+ *
+ */
 package org.nlp_lab.jsonnlp;
 
 import java.util.ArrayList;
