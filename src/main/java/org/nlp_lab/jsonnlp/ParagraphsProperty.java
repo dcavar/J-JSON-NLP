@@ -1,8 +1,7 @@
 /**
  * ParagraphsProperty.java
- *
+ * <p>
  * (C) 2019 by Damir Cavar
- *
  */
 
 package org.nlp_lab.jsonnlp;
@@ -17,18 +16,18 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "id",
-    "tokens",
-    "embeddings",
-    "features",
-    "scores",
-    "labels"
+        "id",
+        "tokens",
+        "embeddings",
+        "features",
+        "scores",
+        "labels"
 })
 public class ParagraphsProperty {
 
     /**
      * Unique paragraph ID
-     * 
+     *
      */
     @JsonProperty("id")
     @JsonPropertyDescription("Unique paragraph ID")
@@ -36,44 +35,44 @@ public class ParagraphsProperty {
     /**
      * Token id lists cannot be empty
      * (Required)
-     * 
+     *
      */
     @JsonProperty("tokens")
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("Token id lists cannot be empty")
-    private Set<Integer> tokens = new LinkedHashSet<Integer>();
+    private Set<Integer> tokens = new LinkedHashSet<>();
     /**
      * Allow for embeddings from multiple sources
-     * 
+     *
      */
     @JsonProperty("embeddings")
     @JsonPropertyDescription("Allow for embeddings from multiple sources")
-    private List<Embedding> embeddings = new ArrayList<Embedding>();
+    private List<Embedding> embeddings = new ArrayList<>();
     /**
      * Linguistic features, corresponding to the ConLL format
-     * 
+     *
      */
     @JsonProperty("features")
     @JsonPropertyDescription("Linguistic features, corresponding to the ConLL format")
     private Map<String, String> features = new HashMap<>();
     /**
      * Confidence levels of a particular attribute
-     * 
+     *
      */
     @JsonProperty("scores")
     @JsonPropertyDescription("Confidence levels of a particular attribute")
     private Scores scores;
     /**
      * Classification labels applied to a given section
-     * 
+     *
      */
     @JsonProperty("labels")
     @JsonPropertyDescription("Classification labels applied to a given section")
-    private List<Label> labels = new ArrayList<Label>();
+    private List<Label> labels = new ArrayList<>();
 
     /**
      * Unique paragraph ID
-     * 
+     *
      */
     @JsonProperty("id")
     public String getId() {
@@ -82,7 +81,7 @@ public class ParagraphsProperty {
 
     /**
      * Unique paragraph ID
-     * 
+     *
      */
     @JsonProperty("id")
     public void setId(String id) {
@@ -92,7 +91,7 @@ public class ParagraphsProperty {
     /**
      * Token id lists cannot be empty
      * (Required)
-     * 
+     *
      */
     @JsonProperty("tokens")
     public Set<Integer> getTokens() {
@@ -102,7 +101,7 @@ public class ParagraphsProperty {
     /**
      * Token id lists cannot be empty
      * (Required)
-     * 
+     *
      */
     @JsonProperty("tokens")
     public void setTokens(Set<Integer> tokens) {
@@ -111,7 +110,7 @@ public class ParagraphsProperty {
 
     /**
      * Allow for embeddings from multiple sources
-     * 
+     *
      */
     @JsonProperty("embeddings")
     public List<Embedding> getEmbeddings() {
@@ -120,7 +119,7 @@ public class ParagraphsProperty {
 
     /**
      * Allow for embeddings from multiple sources
-     * 
+     *
      */
     @JsonProperty("embeddings")
     public void setEmbeddings(List<Embedding> embeddings) {
@@ -129,7 +128,7 @@ public class ParagraphsProperty {
 
     /**
      * Linguistic features, corresponding to the ConLL format
-     * 
+     *
      */
     @JsonProperty("features")
     public Map<String, String> getFeatures() {
@@ -138,7 +137,7 @@ public class ParagraphsProperty {
 
     /**
      * Linguistic features, corresponding to the ConLL format
-     * 
+     *
      */
     @JsonProperty("features")
     public void setFeatures(Map<String, String> features) {
@@ -147,7 +146,7 @@ public class ParagraphsProperty {
 
     /**
      * Confidence levels of a particular attribute
-     * 
+     *
      */
     @JsonProperty("scores")
     public Scores getScores() {
@@ -156,7 +155,7 @@ public class ParagraphsProperty {
 
     /**
      * Confidence levels of a particular attribute
-     * 
+     *
      */
     @JsonProperty("scores")
     public void setScores(Scores scores) {
@@ -165,7 +164,7 @@ public class ParagraphsProperty {
 
     /**
      * Classification labels applied to a given section
-     * 
+     *
      */
     @JsonProperty("labels")
     public List<Label> getLabels() {
@@ -174,7 +173,7 @@ public class ParagraphsProperty {
 
     /**
      * Classification labels applied to a given section
-     * 
+     *
      */
     @JsonProperty("labels")
     public void setLabels(List<Label> labels) {
@@ -187,30 +186,30 @@ public class ParagraphsProperty {
         sb.append(ParagraphsProperty.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("id");
         sb.append('=');
-        sb.append(((this.id == null)?"<null>":this.id));
+        sb.append(((this.id == null) ? "<null>" : this.id));
         sb.append(',');
         sb.append("tokens");
         sb.append('=');
-        sb.append(((this.tokens == null)?"<null>":this.tokens));
+        sb.append(((this.tokens == null) ? "<null>" : this.tokens));
         sb.append(',');
         sb.append("embeddings");
         sb.append('=');
-        sb.append(((this.embeddings == null)?"<null>":this.embeddings));
+        sb.append(((this.embeddings == null) ? "<null>" : this.embeddings));
         sb.append(',');
         sb.append("features");
         sb.append('=');
-        sb.append(((this.features == null)?"<null>":this.features));
+        sb.append(((this.features == null) ? "<null>" : this.features));
         sb.append(',');
         sb.append("scores");
         sb.append('=');
-        sb.append(((this.scores == null)?"<null>":this.scores));
+        sb.append(((this.scores == null) ? "<null>" : this.scores));
         sb.append(',');
         sb.append("labels");
         sb.append('=');
-        sb.append(((this.labels == null)?"<null>":this.labels));
+        sb.append(((this.labels == null) ? "<null>" : this.labels));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -220,12 +219,12 @@ public class ParagraphsProperty {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.embeddings == null)? 0 :this.embeddings.hashCode()));
-        result = ((result* 31)+((this.features == null)? 0 :this.features.hashCode()));
-        result = ((result* 31)+((this.scores == null)? 0 :this.scores.hashCode()));
-        result = ((result* 31)+((this.tokens == null)? 0 :this.tokens.hashCode()));
-        result = ((result* 31)+((this.id == null)? 0 :this.id.hashCode()));
-        result = ((result* 31)+((this.labels == null)? 0 :this.labels.hashCode()));
+        result = ((result * 31) + ((this.embeddings == null) ? 0 : this.embeddings.hashCode()));
+        result = ((result * 31) + ((this.features == null) ? 0 : this.features.hashCode()));
+        result = ((result * 31) + ((this.scores == null) ? 0 : this.scores.hashCode()));
+        result = ((result * 31) + ((this.tokens == null) ? 0 : this.tokens.hashCode()));
+        result = ((result * 31) + ((this.id == null) ? 0 : this.id.hashCode()));
+        result = ((result * 31) + ((this.labels == null) ? 0 : this.labels.hashCode()));
         return result;
     }
 
@@ -234,11 +233,11 @@ public class ParagraphsProperty {
         if (other == this) {
             return true;
         }
-        if ((other instanceof ParagraphsProperty) == false) {
+        if (!(other instanceof ParagraphsProperty)) {
             return false;
         }
         ParagraphsProperty rhs = ((ParagraphsProperty) other);
-        return (((((((this.embeddings == rhs.embeddings)||((this.embeddings!= null)&&this.embeddings.equals(rhs.embeddings)))&&((this.features == rhs.features)||((this.features!= null)&&this.features.equals(rhs.features))))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))))&&((this.tokens == rhs.tokens)||((this.tokens!= null)&&this.tokens.equals(rhs.tokens))))&&((this.id == rhs.id)||((this.id!= null)&&this.id.equals(rhs.id))))&&((this.labels == rhs.labels)||((this.labels!= null)&&this.labels.equals(rhs.labels))));
+        return (((((((this.embeddings == rhs.embeddings) || ((this.embeddings != null) && this.embeddings.equals(rhs.embeddings))) && ((this.features == rhs.features) || ((this.features != null) && this.features.equals(rhs.features)))) && ((this.scores == rhs.scores) || ((this.scores != null) && this.scores.equals(rhs.scores)))) && ((this.tokens == rhs.tokens) || ((this.tokens != null) && this.tokens.equals(rhs.tokens)))) && ((this.id == rhs.id) || ((this.id != null) && this.id.equals(rhs.id)))) && ((this.labels == rhs.labels) || ((this.labels != null) && this.labels.equals(rhs.labels))));
     }
 
 }

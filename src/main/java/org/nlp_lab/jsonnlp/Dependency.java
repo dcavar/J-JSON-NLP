@@ -1,8 +1,7 @@
 /**
  * Dependency.java
- *
+ * <p>
  * (C) 2019 by Damir Cavar
- *
  */
 
 package org.nlp_lab.jsonnlp;
@@ -20,33 +19,34 @@ import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "style",
-    "trees"
+        "style",
+        "trees"
 })
 
 
 public class Dependency {
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("style")
     private String style;
     /**
      * A mapping of dependent token id to a list of governors
      * (Required)
-     * 
+     *
      */
     @JsonProperty("trees")
     @JsonPropertyDescription("A mapping of dependent token id to a list of governors")
     //private Map<String, List<ArcsProperty>> arcs = new HashMap<>();
     private List<List<ArcsProperty>> trees = new ArrayList<>();
+
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("style")
     public String getStyle() {
@@ -54,9 +54,9 @@ public class Dependency {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("style")
     public void setStyle(String style) {
@@ -66,7 +66,7 @@ public class Dependency {
     /**
      * A mapping of dependent token id to a list of governors
      * (Required)
-     * 
+     *
      */
     @JsonProperty("arcs")
     public List<List<ArcsProperty>> getTrees() {
@@ -76,7 +76,7 @@ public class Dependency {
     /**
      * A mapping of dependent token id to a list of governors
      * (Required)
-     * 
+     *
      */
     @JsonProperty("arcs")
     public void setTrees(List<List<ArcsProperty>> trees) {
@@ -89,14 +89,14 @@ public class Dependency {
         sb.append(Dependency.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("style");
         sb.append('=');
-        sb.append(((this.style == null)?"<null>":this.style));
+        sb.append(((this.style == null) ? "<null>" : this.style));
         sb.append(',');
         sb.append("trees");
         sb.append('=');
-        sb.append(((this.trees == null)?"<null>":this.trees));
+        sb.append(((this.trees == null) ? "<null>" : this.trees));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -117,7 +117,7 @@ public class Dependency {
         if (!(other instanceof Dependency)) return false;
 
         Dependency rhs = ((Dependency) other);
-        return (((this.trees == rhs.trees)||((this.trees!= null)&&this.trees.equals(rhs.trees)))&&((this.style == rhs.style)||((this.style!= null)&&this.style.equals(rhs.style))));
+        return (((this.trees == rhs.trees) || ((this.trees != null) && this.trees.equals(rhs.trees))) && ((this.style == rhs.style) || ((this.style != null) && this.style.equals(rhs.style))));
     }
 
 }

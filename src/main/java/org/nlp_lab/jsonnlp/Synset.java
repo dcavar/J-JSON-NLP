@@ -1,8 +1,7 @@
 /**
  * Synset.java
- *
+ * <p>
  * (C) 2019 by Damir Cavar
- *
  */
 
 
@@ -10,6 +9,7 @@ package org.nlp_lab.jsonnlp;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -17,21 +17,21 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "scores",
-    "wordnetId",
-    "neighbors",
-    "synonyms",
-    "antonyms",
-    "hypernyms",
-    "hyponyms",
-    "examples",
-    "definition"
+        "scores",
+        "wordnetId",
+        "neighbors",
+        "synonyms",
+        "antonyms",
+        "hypernyms",
+        "hyponyms",
+        "examples",
+        "definition"
 })
 public class Synset {
 
     /**
      * Confidence levels of a particular attribute
-     * 
+     *
      */
     @JsonProperty("scores")
     @JsonPropertyDescription("Confidence levels of a particular attribute")
@@ -39,23 +39,23 @@ public class Synset {
     @JsonProperty("wordnetId")
     private String wordnetId;
     @JsonProperty("neighbors")
-    private List<String> neighbors = new ArrayList<String>();
+    private List<String> neighbors = new ArrayList<>();
     @JsonProperty("synonyms")
-    private List<String> synonyms = new ArrayList<String>();
+    private List<String> synonyms = new ArrayList<>();
     @JsonProperty("antonyms")
-    private List<String> antonyms = new ArrayList<String>();
+    private List<String> antonyms = new ArrayList<>();
     @JsonProperty("hypernyms")
-    private List<String> hypernyms = new ArrayList<String>();
+    private List<String> hypernyms = new ArrayList<>();
     @JsonProperty("hyponyms")
-    private List<String> hyponyms = new ArrayList<String>();
+    private List<String> hyponyms = new ArrayList<>();
     @JsonProperty("examples")
-    private List<String> examples = new ArrayList<String>();
+    private List<String> examples = new ArrayList<>();
     @JsonProperty("definition")
     private String definition;
 
     /**
      * Confidence levels of a particular attribute
-     * 
+     *
      */
     @JsonProperty("scores")
     public Scores getScores() {
@@ -64,7 +64,7 @@ public class Synset {
 
     /**
      * Confidence levels of a particular attribute
-     * 
+     *
      */
     @JsonProperty("scores")
     public void setScores(Scores scores) {
@@ -157,42 +157,42 @@ public class Synset {
         sb.append(Synset.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("scores");
         sb.append('=');
-        sb.append(((this.scores == null)?"<null>":this.scores));
+        sb.append(((this.scores == null) ? "<null>" : this.scores));
         sb.append(',');
         sb.append("wordnetId");
         sb.append('=');
-        sb.append(((this.wordnetId == null)?"<null>":this.wordnetId));
+        sb.append(((this.wordnetId == null) ? "<null>" : this.wordnetId));
         sb.append(',');
         sb.append("neighbors");
         sb.append('=');
-        sb.append(((this.neighbors == null)?"<null>":this.neighbors));
+        sb.append(((this.neighbors == null) ? "<null>" : this.neighbors));
         sb.append(',');
         sb.append("synonyms");
         sb.append('=');
-        sb.append(((this.synonyms == null)?"<null>":this.synonyms));
+        sb.append(((this.synonyms == null) ? "<null>" : this.synonyms));
         sb.append(',');
         sb.append("antonyms");
         sb.append('=');
-        sb.append(((this.antonyms == null)?"<null>":this.antonyms));
+        sb.append(((this.antonyms == null) ? "<null>" : this.antonyms));
         sb.append(',');
         sb.append("hypernyms");
         sb.append('=');
-        sb.append(((this.hypernyms == null)?"<null>":this.hypernyms));
+        sb.append(((this.hypernyms == null) ? "<null>" : this.hypernyms));
         sb.append(',');
         sb.append("hyponyms");
         sb.append('=');
-        sb.append(((this.hyponyms == null)?"<null>":this.hyponyms));
+        sb.append(((this.hyponyms == null) ? "<null>" : this.hyponyms));
         sb.append(',');
         sb.append("examples");
         sb.append('=');
-        sb.append(((this.examples == null)?"<null>":this.examples));
+        sb.append(((this.examples == null) ? "<null>" : this.examples));
         sb.append(',');
         sb.append("definition");
         sb.append('=');
-        sb.append(((this.definition == null)?"<null>":this.definition));
+        sb.append(((this.definition == null) ? "<null>" : this.definition));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -202,15 +202,15 @@ public class Synset {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.wordnetId == null)? 0 :this.wordnetId.hashCode()));
-        result = ((result* 31)+((this.examples == null)? 0 :this.examples.hashCode()));
-        result = ((result* 31)+((this.scores == null)? 0 :this.scores.hashCode()));
-        result = ((result* 31)+((this.hypernyms == null)? 0 :this.hypernyms.hashCode()));
-        result = ((result* 31)+((this.neighbors == null)? 0 :this.neighbors.hashCode()));
-        result = ((result* 31)+((this.synonyms == null)? 0 :this.synonyms.hashCode()));
-        result = ((result* 31)+((this.antonyms == null)? 0 :this.antonyms.hashCode()));
-        result = ((result* 31)+((this.hyponyms == null)? 0 :this.hyponyms.hashCode()));
-        result = ((result* 31)+((this.definition == null)? 0 :this.definition.hashCode()));
+        result = ((result * 31) + ((this.wordnetId == null) ? 0 : this.wordnetId.hashCode()));
+        result = ((result * 31) + ((this.examples == null) ? 0 : this.examples.hashCode()));
+        result = ((result * 31) + ((this.scores == null) ? 0 : this.scores.hashCode()));
+        result = ((result * 31) + ((this.hypernyms == null) ? 0 : this.hypernyms.hashCode()));
+        result = ((result * 31) + ((this.neighbors == null) ? 0 : this.neighbors.hashCode()));
+        result = ((result * 31) + ((this.synonyms == null) ? 0 : this.synonyms.hashCode()));
+        result = ((result * 31) + ((this.antonyms == null) ? 0 : this.antonyms.hashCode()));
+        result = ((result * 31) + ((this.hyponyms == null) ? 0 : this.hyponyms.hashCode()));
+        result = ((result * 31) + ((this.definition == null) ? 0 : this.definition.hashCode()));
         return result;
     }
 
@@ -219,11 +219,11 @@ public class Synset {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Synset) == false) {
+        if (!(other instanceof Synset)) {
             return false;
         }
         Synset rhs = ((Synset) other);
-        return ((((((((((this.wordnetId == rhs.wordnetId)||((this.wordnetId!= null)&&this.wordnetId.equals(rhs.wordnetId)))&&((this.examples == rhs.examples)||((this.examples!= null)&&this.examples.equals(rhs.examples))))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))))&&((this.hypernyms == rhs.hypernyms)||((this.hypernyms!= null)&&this.hypernyms.equals(rhs.hypernyms))))&&((this.neighbors == rhs.neighbors)||((this.neighbors!= null)&&this.neighbors.equals(rhs.neighbors))))&&((this.synonyms == rhs.synonyms)||((this.synonyms!= null)&&this.synonyms.equals(rhs.synonyms))))&&((this.antonyms == rhs.antonyms)||((this.antonyms!= null)&&this.antonyms.equals(rhs.antonyms))))&&((this.hyponyms == rhs.hyponyms)||((this.hyponyms!= null)&&this.hyponyms.equals(rhs.hyponyms))))&&((this.definition == rhs.definition)||((this.definition!= null)&&this.definition.equals(rhs.definition))));
+        return ((((((((((this.wordnetId == rhs.wordnetId) || ((this.wordnetId != null) && this.wordnetId.equals(rhs.wordnetId))) && ((this.examples == rhs.examples) || ((this.examples != null) && this.examples.equals(rhs.examples)))) && ((this.scores == rhs.scores) || ((this.scores != null) && this.scores.equals(rhs.scores)))) && ((this.hypernyms == rhs.hypernyms) || ((this.hypernyms != null) && this.hypernyms.equals(rhs.hypernyms)))) && ((this.neighbors == rhs.neighbors) || ((this.neighbors != null) && this.neighbors.equals(rhs.neighbors)))) && ((this.synonyms == rhs.synonyms) || ((this.synonyms != null) && this.synonyms.equals(rhs.synonyms)))) && ((this.antonyms == rhs.antonyms) || ((this.antonyms != null) && this.antonyms.equals(rhs.antonyms)))) && ((this.hyponyms == rhs.hyponyms) || ((this.hyponyms != null) && this.hyponyms.equals(rhs.hyponyms)))) && ((this.definition == rhs.definition) || ((this.definition != null) && this.definition.equals(rhs.definition))));
     }
 
 }

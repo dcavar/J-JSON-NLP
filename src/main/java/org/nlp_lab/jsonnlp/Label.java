@@ -10,38 +10,31 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 //@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "type",
-    "label",
-    "scores"
+        "type",
+        "label",
+        "scores"
 })
 public class Label {
 
     /**
-     * 
      * (Required)
-     * 
      */
     @JsonProperty("type")
     private String type;
     /**
-     * 
      * (Required)
-     * 
      */
     @JsonProperty("label")
     private String label;
     /**
      * Confidence levels of a particular attribute
-     * 
      */
     @JsonProperty("scores")
     @JsonPropertyDescription("Confidence levels of a particular attribute")
     private Scores scores;
 
     /**
-     * 
      * (Required)
-     * 
      */
     @JsonProperty("type")
     public String getType() {
@@ -49,9 +42,7 @@ public class Label {
     }
 
     /**
-     * 
      * (Required)
-     * 
      */
     @JsonProperty("type")
     public void setType(String type) {
@@ -59,9 +50,7 @@ public class Label {
     }
 
     /**
-     * 
      * (Required)
-     * 
      */
     @JsonProperty("label")
     public String getLabel() {
@@ -69,9 +58,7 @@ public class Label {
     }
 
     /**
-     * 
      * (Required)
-     * 
      */
     @JsonProperty("label")
     public void setLabel(String label) {
@@ -80,7 +67,6 @@ public class Label {
 
     /**
      * Confidence levels of a particular attribute
-     * 
      */
     @JsonProperty("scores")
     public Scores getScores() {
@@ -89,7 +75,6 @@ public class Label {
 
     /**
      * Confidence levels of a particular attribute
-     * 
      */
     @JsonProperty("scores")
     public void setScores(Scores scores) {
@@ -102,18 +87,18 @@ public class Label {
         sb.append(Label.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("label");
         sb.append('=');
-        sb.append(((this.label == null)?"<null>":this.label));
+        sb.append(((this.label == null) ? "<null>" : this.label));
         sb.append(',');
         sb.append("scores");
         sb.append('=');
-        sb.append(((this.scores == null)?"<null>":this.scores));
+        sb.append(((this.scores == null) ? "<null>" : this.scores));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -123,9 +108,9 @@ public class Label {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.label == null)? 0 :this.label.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.scores == null)? 0 :this.scores.hashCode()));
+        result = ((result * 31) + ((this.label == null) ? 0 : this.label.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.scores == null) ? 0 : this.scores.hashCode()));
         return result;
     }
 
@@ -134,11 +119,11 @@ public class Label {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Label) == false) {
+        if (!(other instanceof Label)) {
             return false;
         }
         Label rhs = ((Label) other);
-        return ((((this.label == rhs.label)||((this.label!= null)&&this.label.equals(rhs.label)))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))));
+        return ((((this.label == rhs.label) || ((this.label != null) && this.label.equals(rhs.label))) && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type)))) && ((this.scores == rhs.scores) || ((this.scores != null) && this.scores.equals(rhs.scores))));
     }
 
 }

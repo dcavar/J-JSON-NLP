@@ -13,20 +13,18 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    //"sentenceId",
-    "lab",
-    "gov",
-    "dep",
-    "scores"
+        //"sentenceId",
+        "lab",
+        "gov",
+        "dep",
+        "scores"
 })
 
 
 public class ArcsProperty {
 
     /**
-     * 
      * (Required)
-     * 
      */
     @JsonProperty("lab")
     @JsonPropertyDescription("Label of the dependency.")
@@ -34,21 +32,18 @@ public class ArcsProperty {
     /**
      * Token Id corresponding to the governor
      * (Required)
-     * 
      */
     @JsonProperty("gov")
     @JsonPropertyDescription("Token Id corresponding to the governor")
     private Integer gov;
     /**
      * Token Id corresponding to the dependent
-     * 
      */
     @JsonProperty("dep")
     @JsonPropertyDescription("Token Id corresponding to the dependent")
     private Integer dep;
     /**
      * Confidence levels of a particular attribute
-     * 
      */
     @JsonProperty("scores")
     @JsonPropertyDescription("Confidence levels of a particular attribute")
@@ -56,9 +51,7 @@ public class ArcsProperty {
 
 
     /**
-     * 
      * (Required)
-     * 
      */
     @JsonProperty("lab")
     public String getLabel() {
@@ -66,9 +59,7 @@ public class ArcsProperty {
     }
 
     /**
-     * 
      * (Required)
-     * 
      */
     @JsonProperty("lab")
     public void setLabel(String label) {
@@ -78,7 +69,6 @@ public class ArcsProperty {
     /**
      * Token Id corresponding to the governor
      * (Required)
-     * 
      */
     @JsonProperty("gov")
     public Integer getGovernor() {
@@ -88,7 +78,6 @@ public class ArcsProperty {
     /**
      * Token Id corresponding to the governor
      * (Required)
-     * 
      */
     @JsonProperty("gov")
     public void setGovernor(Integer governor) {
@@ -97,7 +86,6 @@ public class ArcsProperty {
 
     /**
      * Token Id corresponding to the dependent
-     * 
      */
     @JsonProperty("dep")
     public Integer getDependent() {
@@ -106,7 +94,6 @@ public class ArcsProperty {
 
     /**
      * Token Id corresponding to the dependent
-     * 
      */
     @JsonProperty("dep")
     public void setDependent(Integer dependent) {
@@ -115,7 +102,6 @@ public class ArcsProperty {
 
     /**
      * Confidence levels of a particular attribute
-     * 
      */
     @JsonProperty("scores")
     public Scores getScores() {
@@ -124,7 +110,6 @@ public class ArcsProperty {
 
     /**
      * Confidence levels of a particular attribute
-     * 
      */
     @JsonProperty("scores")
     public void setScores(Scores scores) {
@@ -141,22 +126,22 @@ public class ArcsProperty {
         sb.append(',');
         sb.append("lab");
         sb.append('=');
-        sb.append(((this.lab == null)?"<null>":this.lab));
+        sb.append(((this.lab == null) ? "<null>" : this.lab));
         sb.append(',');
         sb.append("gov");
         sb.append('=');
-        sb.append(((this.gov == null)?"<null>":this.gov));
+        sb.append(((this.gov == null) ? "<null>" : this.gov));
         sb.append(',');
         sb.append("dep");
         sb.append('=');
-        sb.append(((this.dep == null)?"<null>":this.dep));
+        sb.append(((this.dep == null) ? "<null>" : this.dep));
         sb.append(',');
         sb.append("scores");
         sb.append('=');
-        sb.append(((this.scores == null)?"<null>":this.scores));
+        sb.append(((this.scores == null) ? "<null>" : this.scores));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -179,13 +164,13 @@ public class ArcsProperty {
         if (other == this) return true;
         if (!(other instanceof ArcsProperty)) return false;
 
-        ArcsProperty rhs = (ArcsProperty)other;
+        ArcsProperty rhs = (ArcsProperty) other;
         // TODO (string1 == string2) returns 0 !
-        return ((((( this.lab.equals(rhs.lab) || ((this.lab != null) &&
+        return (((((this.lab.equals(rhs.lab) || ((this.lab != null) &&
                 this.lab.equals(rhs.lab)))) &&
-                (this.gov.equals(rhs.gov) || ((this.gov!= null) && this.gov.equals(rhs.gov)))) &&
-                ((this.dep.equals(rhs.dep)) || ((this.dep!= null) && this.dep.equals(rhs.dep)))) &&
-                ((this.scores == rhs.scores) || ((this.scores!= null) && this.scores.equals(rhs.scores))));
+                (this.gov.equals(rhs.gov) || ((this.gov != null) && this.gov.equals(rhs.gov)))) &&
+                ((this.dep.equals(rhs.dep)) || ((this.dep != null) && this.dep.equals(rhs.dep)))) &&
+                ((this.scores == rhs.scores) || ((this.scores != null) && this.scores.equals(rhs.scores))));
     }
 
 }

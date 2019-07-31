@@ -1,8 +1,7 @@
 /**
  * Scores.java
- *
+ * <p>
  * (C) 2019 by Damir Cavar
- *
  */
 
 
@@ -16,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Confidence levels of a particular attribute
- * 
+ *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -76,8 +75,8 @@ public class Scores {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(Scores.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -86,8 +85,7 @@ public class Scores {
 
     @Override
     public int hashCode() {
-        int result = 1;
-        return result;
+        return 1;
     }
 
     @Override
@@ -95,7 +93,7 @@ public class Scores {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Scores) == false) {
+        if (!(other instanceof Scores)) {
             return false;
         }
         Scores rhs = ((Scores) other);

@@ -16,14 +16,14 @@ import java.util.List;
 /**
  * The JSON-NLP Schema
  * <p>
- * 
- * 
+ *
+ *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "meta",
-    "conll",
-    "documents"
+        "meta",
+        "conll",
+        "documents"
 })
 public class JsonNLP {
 
@@ -31,15 +31,15 @@ public class JsonNLP {
     private Meta meta;
     /**
      * Metadata for parsing to and from CoNLL formats
-     * 
+     *
      */
     @JsonProperty("conll")
     @JsonPropertyDescription("Metadata for parsing to and from CoNLL formats")
     private Conll conll;
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("documents")
     private List<DocumentsProperty> documents = new ArrayList<>();
@@ -56,7 +56,7 @@ public class JsonNLP {
 
     /**
      * Metadata for parsing to and from CoNLL formats
-     * 
+     *
      */
     @JsonProperty("conll")
     public Conll getConll() {
@@ -65,7 +65,7 @@ public class JsonNLP {
 
     /**
      * Metadata for parsing to and from CoNLL formats
-     * 
+     *
      */
     @JsonProperty("conll")
     public void setConll(Conll conll) {
@@ -73,9 +73,9 @@ public class JsonNLP {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("documents")
     public List<DocumentsProperty> getDocuments() {
@@ -83,9 +83,9 @@ public class JsonNLP {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("documents")
     public void setDocuments(List<DocumentsProperty> documents) {
@@ -98,18 +98,18 @@ public class JsonNLP {
         sb.append(JsonNLP.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("meta");
         sb.append('=');
-        sb.append(((this.meta == null)?"<null>":this.meta));
+        sb.append(((this.meta == null) ? "<null>" : this.meta));
         sb.append(',');
         sb.append("conll");
         sb.append('=');
-        sb.append(((this.conll == null)?"<null>":this.conll));
+        sb.append(((this.conll == null) ? "<null>" : this.conll));
         sb.append(',');
         sb.append("documents");
         sb.append('=');
-        sb.append(((this.documents == null)?"<null>":this.documents));
+        sb.append(((this.documents == null) ? "<null>" : this.documents));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -119,9 +119,9 @@ public class JsonNLP {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.conll == null)? 0 :this.conll.hashCode()));
-        result = ((result* 31)+((this.documents == null)? 0 :this.documents.hashCode()));
-        result = ((result* 31)+((this.meta == null)? 0 :this.meta.hashCode()));
+        result = ((result * 31) + ((this.conll == null) ? 0 : this.conll.hashCode()));
+        result = ((result * 31) + ((this.documents == null) ? 0 : this.documents.hashCode()));
+        result = ((result * 31) + ((this.meta == null) ? 0 : this.meta.hashCode()));
         return result;
     }
 
@@ -130,11 +130,11 @@ public class JsonNLP {
         if (other == this) {
             return true;
         }
-        if ((other instanceof JsonNLP) == false) {
+        if (!(other instanceof JsonNLP)) {
             return false;
         }
         JsonNLP rhs = ((JsonNLP) other);
-        return ((((this.conll == rhs.conll)||((this.conll!= null)&&this.conll.equals(rhs.conll)))&&((this.documents == rhs.documents)||((this.documents!= null)&&this.documents.equals(rhs.documents))))&&((this.meta == rhs.meta)||((this.meta!= null)&&this.meta.equals(rhs.meta))));
+        return ((((this.conll == rhs.conll) || ((this.conll != null) && this.conll.equals(rhs.conll))) && ((this.documents == rhs.documents) || ((this.documents != null) && this.documents.equals(rhs.documents)))) && ((this.meta == rhs.meta) || ((this.meta != null) && this.meta.equals(rhs.meta))));
     }
 
 }

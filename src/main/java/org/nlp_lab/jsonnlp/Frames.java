@@ -1,8 +1,7 @@
 /**
  * Frames.java
- *
+ * <p>
  * (C) 2019 by Damir Cavar
- *
  */
 package org.nlp_lab.jsonnlp;
 
@@ -25,6 +24,7 @@ public class Frames {
     public String getName() {
         return name;
     }
+
     @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
@@ -34,22 +34,27 @@ public class Frames {
     public int getFrameId() {
         return frameId;
     }
+
     @JsonProperty("frameId")
     public void setFrameId(int frameId) {
         this.frameId = frameId;
     }
+
     @JsonProperty("definition")
     public String getDefinition() {
         return definition;
     }
+
     @JsonProperty("definition")
     public void setDefinition(String definition) {
         this.definition = definition;
     }
+
     @JsonProperty("lu")
     public List<Lu> getLu() {
         return lu;
     }
+
     @JsonProperty("lu")
     public void setLu(List<Lu> lu) {
         this.lu = lu;

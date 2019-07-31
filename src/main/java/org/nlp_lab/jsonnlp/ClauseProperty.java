@@ -18,15 +18,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "id",
-    "root",
-    "parentClauseId",
-    "dominates",
-    "type",
-    "tense",
-    "transitivity",
-    "negated",
-    "clause"
+        "id",
+        "root",
+        "parentClauseId",
+        "dominates",
+        "type",
+        "tense",
+        "transitivity",
+        "negated",
+        "clause"
 })
 
 
@@ -115,12 +115,12 @@ public class ClauseProperty {
     }
 
     @JsonProperty("id")
-    public void setClause_id(int clause_id ) {
+    public void setClause_id(int clause_id) {
         this.clause_id = clause_id;
     }
 
     @JsonProperty("root")
-    public void setHead( int head) {
+    public void setHead(int head) {
         this.head = head;
     }
 
@@ -148,7 +148,7 @@ public class ClauseProperty {
     public void setTense(String tense) {
         this.tense = tense;
     }
-    
+
     @JsonProperty("transitivity")
     public void setTransitivity(String transitivity) {
         this.transitivity = transitivity;
@@ -160,7 +160,7 @@ public class ClauseProperty {
     }
 
     @JsonProperty("clause")
-    public void setClause( List<Integer> clause) {
+    public void setClause(List<Integer> clause) {
         this.clause = clause;
     }
 

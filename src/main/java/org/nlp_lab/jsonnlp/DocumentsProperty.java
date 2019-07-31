@@ -1,8 +1,7 @@
 /**
  * DocumentsProperty.java
- *
+ * <p>
  * (C) 2019 by Damir Cavar
- *
  */
 package org.nlp_lab.jsonnlp;
 
@@ -16,32 +15,30 @@ import org.javatuples.Pair;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "id",
-    "meta",
-    "text",
-    "embeddings",
-    "features",
-    "scores",
-    "labels",
-    "paragraphs",
-    "sentences",
-    //"clauses",
-    "tokenList",
-    "dependencies",
-    "coreferences",
-    "constituents",
-    "expressions",
+        "id",
+        "meta",
+        "text",
+        "embeddings",
+        "features",
+        "scores",
+        "labels",
+        "paragraphs",
+        "sentences",
+        //"clauses",
+        "tokenList",
+        "dependencies",
+        "coreferences",
+        "constituents",
+        "expressions",
         "dependencymap"
 })
-
-
 
 
 public class DocumentsProperty {
 
     /**
      * Document ID
-     * 
+     *
      */
     @JsonProperty("id")
     @JsonPropertyDescription("Document ID")
@@ -50,39 +47,39 @@ public class DocumentsProperty {
     private Meta meta;
     /**
      * The unprocessed text of the document
-     * 
+     *
      */
     @JsonProperty("text")
     @JsonPropertyDescription("The unprocessed text of the document")
     private String text;
     /**
      * Allow for embeddings from multiple sources
-     * 
+     *
      */
     @JsonProperty("embeddings")
     @JsonPropertyDescription("Allow for embeddings from multiple sources")
-    private List<Embedding> embeddings = new ArrayList<Embedding>();
+    private List<Embedding> embeddings = new ArrayList<>();
     /**
      * Linguistic features, corresponding to the ConLL format
-     * 
+     *
      */
     @JsonProperty("features")
     @JsonPropertyDescription("Linguistic features, corresponding to the ConLL format")
     private Map<String, String> features = new HashMap<>();
     /**
      * Confidence levels of a particular attribute
-     * 
+     *
      */
     @JsonProperty("scores")
     @JsonPropertyDescription("Confidence levels of a particular attribute")
     private Scores scores;
     /**
      * Classification labels applied to a given section
-     * 
+     *
      */
     @JsonProperty("labels")
     @JsonPropertyDescription("Classification labels applied to a given section")
-    private List<Label> labels = new ArrayList<Label>();
+    private List<Label> labels = new ArrayList<>();
     @JsonProperty("paragraphs")
     private Map<String, ParagraphsProperty> paragraphs = new HashMap<>();
     @JsonProperty("sentences")
@@ -90,31 +87,31 @@ public class DocumentsProperty {
     @JsonProperty("clauses")
     private List<ClauseProperty> clauses;
     ///**
-     //* A mapping of tokens objects in the document
-     //* (Required)
-     //*
-     //*/
+    //* A mapping of tokens objects in the document
+    //* (Required)
+    //*
+    //*/
     @JsonProperty("tokenList")
     @JsonPropertyDescription("A mapping of tokens objects in the document")
     private List<TokenListProperty> tokenList = new ArrayList<>();
     /**
      * Dependency graphs of any style
-     * 
+     *
      */
     @JsonProperty("dependencies")
     @JsonPropertyDescription("Dependency graphs of any style")
-    private Dependency dependencies; 
+    private Dependency dependencies;
     @JsonProperty("coreferences")
-    private List<Coreference> coreferences = new ArrayList<Coreference>();
+    private List<Coreference> coreferences = new ArrayList<>();
     @JsonProperty("constituents")
-    private List<Constituent> constituents = new ArrayList<Constituent>();
+    private List<Constituent> constituents = new ArrayList<>();
     /**
      * Multi-word expressions, idioms, etc.
-     * 
+     *
      */
     @JsonProperty("expressions")
     @JsonPropertyDescription("Multi-word expressions, idioms, etc.")
-    private List<Expression> expressions = new ArrayList<Expression>();
+    private List<Expression> expressions = new ArrayList<>();
 
 
     @JsonProperty("dependencymap")
@@ -122,17 +119,16 @@ public class DocumentsProperty {
     private HashMap<String, List<Pair<Integer, Integer>>> deps = new HashMap<>();
 
     @JsonProperty("dependencymap")
-    public HashMap<String, List<Pair<Integer, Integer>>> getDepsMap(){
+    public HashMap<String, List<Pair<Integer, Integer>>> getDepsMap() {
         return this.deps;
     }
 
     @JsonProperty("dependencymap")
-    public void addMap( HashMap<String, List<Pair<Integer, Integer>>> depsfrom){
-        for(String key: depsfrom.keySet()){
-            if(this.deps.containsKey(key)){
+    public void addMap(HashMap<String, List<Pair<Integer, Integer>>> depsfrom) {
+        for (String key : depsfrom.keySet()) {
+            if (this.deps.containsKey(key)) {
                 this.deps.get(key).addAll(depsfrom.get(key));
-            }
-            else{
+            } else {
                 this.deps.put(key, depsfrom.get(key));
             }
         }
@@ -140,7 +136,7 @@ public class DocumentsProperty {
 
     /**
      * Document ID
-     * 
+     *
      */
     @JsonProperty("id")
     public int getId() {
@@ -149,7 +145,7 @@ public class DocumentsProperty {
 
     /**
      * Document ID
-     * 
+     *
      */
     @JsonProperty("id")
     public void setId(int id) {
@@ -168,7 +164,7 @@ public class DocumentsProperty {
 
     /**
      * The unprocessed text of the document
-     * 
+     *
      */
     @JsonProperty("text")
     public String getText() {
@@ -177,7 +173,7 @@ public class DocumentsProperty {
 
     /**
      * The unprocessed text of the document
-     * 
+     *
      */
     @JsonProperty("text")
     public void setText(String text) {
@@ -186,7 +182,7 @@ public class DocumentsProperty {
 
     /**
      * Allow for embeddings from multiple sources
-     * 
+     *
      */
     @JsonProperty("embeddings")
     public List<Embedding> getEmbeddings() {
@@ -195,7 +191,7 @@ public class DocumentsProperty {
 
     /**
      * Allow for embeddings from multiple sources
-     * 
+     *
      */
     @JsonProperty("embeddings")
     public void setEmbeddings(List<Embedding> embeddings) {
@@ -204,7 +200,7 @@ public class DocumentsProperty {
 
     /**
      * Linguistic features, corresponding to the ConLL format
-     * 
+     *
      */
     @JsonProperty("features")
     public Map<String, String> getFeatures() {
@@ -213,7 +209,7 @@ public class DocumentsProperty {
 
     /**
      * Linguistic features, corresponding to the ConLL format
-     * 
+     *
      */
     @JsonProperty("features")
     public void setFeatures(Map<String, String> features) {
@@ -222,7 +218,7 @@ public class DocumentsProperty {
 
     /**
      * Confidence levels of a particular attribute
-     * 
+     *
      */
     @JsonProperty("scores")
     public Scores getScores() {
@@ -231,7 +227,7 @@ public class DocumentsProperty {
 
     /**
      * Confidence levels of a particular attribute
-     * 
+     *
      */
     @JsonProperty("scores")
     public void setScores(Scores scores) {
@@ -240,7 +236,7 @@ public class DocumentsProperty {
 
     /**
      * Classification labels applied to a given section
-     * 
+     *
      */
     @JsonProperty("labels")
     public List<Label> getLabels() {
@@ -249,7 +245,7 @@ public class DocumentsProperty {
 
     /**
      * Classification labels applied to a given section
-     * 
+     *
      */
     @JsonProperty("labels")
     public void setLabels(List<Label> labels) {
@@ -289,7 +285,7 @@ public class DocumentsProperty {
     /**
      * A mapping of tokens objects in the document
      * (Required)
-     * 
+     *
      */
     @JsonProperty("tokenList")
     public List<TokenListProperty> getTokenList() {
@@ -299,7 +295,7 @@ public class DocumentsProperty {
     /**
      * A mapping of tokens objects in the document
      * (Required)
-     * 
+     *
      */
     @JsonProperty("tokenList")
     public void setTokenList(List<TokenListProperty> tokenList) {
@@ -308,7 +304,7 @@ public class DocumentsProperty {
 
     /**
      * Dependency graphs of any style
-     * 
+     *
      */
     @JsonProperty("dependencies")
     public Dependency getDependencies() {
@@ -317,7 +313,7 @@ public class DocumentsProperty {
 
     /**
      * Dependency graphs of any style
-     * 
+     *
      */
     @JsonProperty("dependencies")
     public void setDependencies(Dependency dependencies) {
@@ -346,7 +342,7 @@ public class DocumentsProperty {
 
     /**
      * Multi-word expressions, idioms, etc.
-     * 
+     *
      */
     @JsonProperty("expressions")
     public List<Expression> getExpressions() {
@@ -355,7 +351,7 @@ public class DocumentsProperty {
 
     /**
      * Multi-word expressions, idioms, etc.
-     * 
+     *
      */
     @JsonProperty("expressions")
     public void setExpressions(List<Expression> expressions) {
@@ -372,35 +368,35 @@ public class DocumentsProperty {
         sb.append(',');
         sb.append("meta");
         sb.append('=');
-        sb.append(((this.meta == null)?"<null>":this.meta));
+        sb.append(((this.meta == null) ? "<null>" : this.meta));
         sb.append(',');
         sb.append("text");
         sb.append('=');
-        sb.append(((this.text == null)?"<null>":this.text));
+        sb.append(((this.text == null) ? "<null>" : this.text));
         sb.append(',');
         sb.append("embeddings");
         sb.append('=');
-        sb.append(((this.embeddings == null)?"<null>":this.embeddings));
+        sb.append(((this.embeddings == null) ? "<null>" : this.embeddings));
         sb.append(',');
         sb.append("features");
         sb.append('=');
-        sb.append(((this.features == null)?"<null>":this.features));
+        sb.append(((this.features == null) ? "<null>" : this.features));
         sb.append(',');
         sb.append("scores");
         sb.append('=');
-        sb.append(((this.scores == null)?"<null>":this.scores));
+        sb.append(((this.scores == null) ? "<null>" : this.scores));
         sb.append(',');
         sb.append("labels");
         sb.append('=');
-        sb.append(((this.labels == null)?"<null>":this.labels));
+        sb.append(((this.labels == null) ? "<null>" : this.labels));
         sb.append(',');
         sb.append("paragraphs");
         sb.append('=');
-        sb.append(((this.paragraphs == null)?"<null>":this.paragraphs));
+        sb.append(((this.paragraphs == null) ? "<null>" : this.paragraphs));
         sb.append(',');
         sb.append("sentences");
         sb.append('=');
-        sb.append(((this.sentences == null)?"<null>":this.sentences));
+        sb.append(((this.sentences == null) ? "<null>" : this.sentences));
         sb.append(',');
         //sb.append("clauses");
         //sb.append('=');
@@ -408,26 +404,26 @@ public class DocumentsProperty {
         sb.append(',');
         sb.append("tokenList");
         sb.append('=');
-        sb.append(((this.tokenList == null)?"<null>":this.tokenList));
+        sb.append(((this.tokenList == null) ? "<null>" : this.tokenList));
         sb.append(',');
         sb.append("dependencies");
         sb.append('=');
-        sb.append(((this.dependencies == null)?"<null>":this.dependencies));
+        sb.append(((this.dependencies == null) ? "<null>" : this.dependencies));
         sb.append(',');
         sb.append("coreferences");
         sb.append('=');
-        sb.append(((this.coreferences == null)?"<null>":this.coreferences));
+        sb.append(((this.coreferences == null) ? "<null>" : this.coreferences));
         sb.append(',');
         sb.append("constituents");
         sb.append('=');
-        sb.append(((this.constituents == null)?"<null>":this.constituents));
+        sb.append(((this.constituents == null) ? "<null>" : this.constituents));
         sb.append(',');
         sb.append("expressions");
         sb.append('=');
-        sb.append(((this.expressions == null)?"<null>":this.expressions));
+        sb.append(((this.expressions == null) ? "<null>" : this.expressions));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -437,21 +433,21 @@ public class DocumentsProperty {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.embeddings == null)? 0 :this.embeddings.hashCode()));
-        result = ((result* 31)+((this.scores == null)? 0 :this.scores.hashCode()));
-        result = ((result* 31)+((this.sentences == null)? 0 :this.sentences.hashCode()));
+        result = ((result * 31) + ((this.embeddings == null) ? 0 : this.embeddings.hashCode()));
+        result = ((result * 31) + ((this.scores == null) ? 0 : this.scores.hashCode()));
+        result = ((result * 31) + ((this.sentences == null) ? 0 : this.sentences.hashCode()));
         //result = ((result* 31)+((this.clauses == null)? 0 :this.clauses.hashCode()));
-        result = ((result* 31)+((this.paragraphs == null)? 0 :this.paragraphs.hashCode()));
-        result = ((result* 31)+((this.expressions == null)? 0 :this.expressions.hashCode()));
-        result = ((result* 31)+((this.labels == null)? 0 :this.labels.hashCode()));
-        result = ((result* 31)+((this.dependencies == null)? 0 :this.dependencies.hashCode()));
-        result = ((result* 31)+((this.features == null)? 0 :this.features.hashCode()));
-        result = ((result* 31)+((this.meta == null)? 0 :this.meta.hashCode()));
-        result = ((result* 31)+((this.id)));
-        result = ((result* 31)+((this.text == null)? 0 :this.text.hashCode()));
-        result = ((result* 31)+((this.tokenList == null)? 0 :this.tokenList.hashCode()));
-        result = ((result* 31)+((this.coreferences == null)? 0 :this.coreferences.hashCode()));
-        result = ((result* 31)+((this.constituents == null)? 0 :this.constituents.hashCode()));
+        result = ((result * 31) + ((this.paragraphs == null) ? 0 : this.paragraphs.hashCode()));
+        result = ((result * 31) + ((this.expressions == null) ? 0 : this.expressions.hashCode()));
+        result = ((result * 31) + ((this.labels == null) ? 0 : this.labels.hashCode()));
+        result = ((result * 31) + ((this.dependencies == null) ? 0 : this.dependencies.hashCode()));
+        result = ((result * 31) + ((this.features == null) ? 0 : this.features.hashCode()));
+        result = ((result * 31) + ((this.meta == null) ? 0 : this.meta.hashCode()));
+        result = ((result * 31) + ((this.id)));
+        result = ((result * 31) + ((this.text == null) ? 0 : this.text.hashCode()));
+        result = ((result * 31) + ((this.tokenList == null) ? 0 : this.tokenList.hashCode()));
+        result = ((result * 31) + ((this.coreferences == null) ? 0 : this.coreferences.hashCode()));
+        result = ((result * 31) + ((this.constituents == null) ? 0 : this.constituents.hashCode()));
         return result;
     }
 
@@ -460,11 +456,11 @@ public class DocumentsProperty {
         if (other == this) {
             return true;
         }
-        if ((other instanceof DocumentsProperty) == false) {
+        if (!(other instanceof DocumentsProperty)) {
             return false;
         }
         DocumentsProperty rhs = ((DocumentsProperty) other);
-        return ((((((((((((((((this.embeddings == rhs.embeddings)||((this.embeddings!= null)&&this.embeddings.equals(rhs.embeddings)))&&((this.scores == rhs.scores)||((this.scores!= null)&&this.scores.equals(rhs.scores))))&&((this.sentences == rhs.sentences)||((this.sentences!= null)&&this.sentences.equals(rhs.sentences)))))&&((this.paragraphs == rhs.paragraphs)||((this.paragraphs!= null)&&this.paragraphs.equals(rhs.paragraphs))))&&((this.expressions == rhs.expressions)||((this.expressions!= null)&&this.expressions.equals(rhs.expressions))))&&((this.labels == rhs.labels)||((this.labels!= null)&&this.labels.equals(rhs.labels))))&&((this.dependencies == rhs.dependencies)||((this.dependencies!= null)&&this.dependencies.equals(rhs.dependencies))))&&((this.features == rhs.features)||((this.features!= null)&&this.features.equals(rhs.features))))&&((this.meta == rhs.meta)||((this.meta!= null)&&this.meta.equals(rhs.meta))))&&((this.id == rhs.id)))&&((this.text == rhs.text)||((this.text!= null)&&this.text.equals(rhs.text))))&&((this.tokenList == rhs.tokenList)||((this.tokenList!= null)&&this.tokenList.equals(rhs.tokenList))))&&((this.coreferences == rhs.coreferences)||((this.coreferences!= null)&&this.coreferences.equals(rhs.coreferences))))&&((this.constituents == rhs.constituents)||((this.constituents!= null)&&this.constituents.equals(rhs.constituents))));
+        return ((((((((((((((((this.embeddings == rhs.embeddings) || ((this.embeddings != null) && this.embeddings.equals(rhs.embeddings))) && ((this.scores == rhs.scores) || ((this.scores != null) && this.scores.equals(rhs.scores)))) && ((this.sentences == rhs.sentences) || ((this.sentences != null) && this.sentences.equals(rhs.sentences))))) && ((this.paragraphs == rhs.paragraphs) || ((this.paragraphs != null) && this.paragraphs.equals(rhs.paragraphs)))) && ((this.expressions == rhs.expressions) || ((this.expressions != null) && this.expressions.equals(rhs.expressions)))) && ((this.labels == rhs.labels) || ((this.labels != null) && this.labels.equals(rhs.labels)))) && ((this.dependencies == rhs.dependencies) || ((this.dependencies != null) && this.dependencies.equals(rhs.dependencies)))) && ((this.features == rhs.features) || ((this.features != null) && this.features.equals(rhs.features)))) && ((this.meta == rhs.meta) || ((this.meta != null) && this.meta.equals(rhs.meta)))) && ((this.id == rhs.id))) && ((this.text == rhs.text) || ((this.text != null) && this.text.equals(rhs.text)))) && ((this.tokenList == rhs.tokenList) || ((this.tokenList != null) && this.tokenList.equals(rhs.tokenList)))) && ((this.coreferences == rhs.coreferences) || ((this.coreferences != null) && this.coreferences.equals(rhs.coreferences)))) && ((this.constituents == rhs.constituents) || ((this.constituents != null) && this.constituents.equals(rhs.constituents))));
     }
 
 }

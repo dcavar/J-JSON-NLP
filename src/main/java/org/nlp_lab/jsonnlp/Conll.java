@@ -1,7 +1,6 @@
 /**
  * Conll.java
  * (C) 2019 by Damir Cavar
- *
  */
 package org.nlp_lab.jsonnlp;
 
@@ -13,17 +12,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Metadata for parsing to and from CoNLL formats
- * 
+ *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "sentence_ids"
+        "sentence_ids"
 })
 public class Conll {
 
     /**
      * Are sentence ids provided for each sentence
-     * 
+     *
      */
     @JsonProperty("sentence_ids")
     @JsonPropertyDescription("Are sentence ids provided for each sentence")
@@ -31,7 +30,7 @@ public class Conll {
 
     /**
      * Are sentence ids provided for each sentence
-     * 
+     *
      */
     @JsonProperty("sentence_ids")
     public Boolean getSentenceIds() {
@@ -40,7 +39,7 @@ public class Conll {
 
     /**
      * Are sentence ids provided for each sentence
-     * 
+     *
      */
     @JsonProperty("sentence_ids")
     public void setSentenceIds(Boolean sentenceIds) {
@@ -53,10 +52,10 @@ public class Conll {
         sb.append(Conll.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("sentenceIds");
         sb.append('=');
-        sb.append(((this.sentenceIds == null)?"<null>":this.sentenceIds));
+        sb.append(((this.sentenceIds == null) ? "<null>" : this.sentenceIds));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -66,7 +65,7 @@ public class Conll {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.sentenceIds == null)? 0 :this.sentenceIds.hashCode()));
+        result = ((result * 31) + ((this.sentenceIds == null) ? 0 : this.sentenceIds.hashCode()));
         return result;
     }
 
@@ -75,11 +74,11 @@ public class Conll {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Conll) == false) {
+        if (!(other instanceof Conll)) {
             return false;
         }
         Conll rhs = ((Conll) other);
-        return ((this.sentenceIds == rhs.sentenceIds)||((this.sentenceIds!= null)&&this.sentenceIds.equals(rhs.sentenceIds)));
+        return ((this.sentenceIds == rhs.sentenceIds) || ((this.sentenceIds != null) && this.sentenceIds.equals(rhs.sentenceIds)));
     }
 
 }

@@ -1,14 +1,14 @@
 /**
  * Representative.java
- *
+ * <p>
  * (C) 2019 by Damir Cavar
- *
  */
 
 package org.nlp_lab.jsonnlp;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -17,22 +17,22 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "head",
-    "entity",
-    "tokens"
+        "head",
+        "entity",
+        "tokens"
 })
 public class Representative {
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("head")
     private Integer head;
     /**
      * What type of entity is this
-     * 
+     *
      */
     @JsonProperty("entity")
     @JsonPropertyDescription("What type of entity is this")
@@ -40,17 +40,17 @@ public class Representative {
     /**
      * Token id lists cannot be empty
      * (Required)
-     * 
+     *
      */
     @JsonProperty("tokens")
     @JsonDeserialize(as = java.util.LinkedHashSet.class)
     @JsonPropertyDescription("Token id lists cannot be empty")
-    private Set<Integer> tokens = new LinkedHashSet<Integer>();
+    private Set<Integer> tokens = new LinkedHashSet<>();
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("head")
     public Integer getHead() {
@@ -58,9 +58,9 @@ public class Representative {
     }
 
     /**
-     * 
+     *
      * (Required)
-     * 
+     *
      */
     @JsonProperty("head")
     public void setHead(Integer head) {
@@ -69,7 +69,7 @@ public class Representative {
 
     /**
      * What type of entity is this
-     * 
+     *
      */
     @JsonProperty("entity")
     public String getEntity() {
@@ -78,7 +78,7 @@ public class Representative {
 
     /**
      * What type of entity is this
-     * 
+     *
      */
     @JsonProperty("entity")
     public void setEntity(String entity) {
@@ -88,7 +88,7 @@ public class Representative {
     /**
      * Token id lists cannot be empty
      * (Required)
-     * 
+     *
      */
     @JsonProperty("tokens")
     public Set<Integer> getTokens() {
@@ -98,7 +98,7 @@ public class Representative {
     /**
      * Token id lists cannot be empty
      * (Required)
-     * 
+     *
      */
     @JsonProperty("tokens")
     public void setTokens(Set<Integer> tokens) {
@@ -111,18 +111,18 @@ public class Representative {
         sb.append(Representative.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("head");
         sb.append('=');
-        sb.append(((this.head == null)?"<null>":this.head));
+        sb.append(((this.head == null) ? "<null>" : this.head));
         sb.append(',');
         sb.append("entity");
         sb.append('=');
-        sb.append(((this.entity == null)?"<null>":this.entity));
+        sb.append(((this.entity == null) ? "<null>" : this.entity));
         sb.append(',');
         sb.append("tokens");
         sb.append('=');
-        sb.append(((this.tokens == null)?"<null>":this.tokens));
+        sb.append(((this.tokens == null) ? "<null>" : this.tokens));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -132,9 +132,9 @@ public class Representative {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.head == null)? 0 :this.head.hashCode()));
-        result = ((result* 31)+((this.tokens == null)? 0 :this.tokens.hashCode()));
-        result = ((result* 31)+((this.entity == null)? 0 :this.entity.hashCode()));
+        result = ((result * 31) + ((this.head == null) ? 0 : this.head.hashCode()));
+        result = ((result * 31) + ((this.tokens == null) ? 0 : this.tokens.hashCode()));
+        result = ((result * 31) + ((this.entity == null) ? 0 : this.entity.hashCode()));
         return result;
     }
 
@@ -143,11 +143,11 @@ public class Representative {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Representative) == false) {
+        if (!(other instanceof Representative)) {
             return false;
         }
         Representative rhs = ((Representative) other);
-        return ((((this.head == rhs.head)||((this.head!= null)&&this.head.equals(rhs.head)))&&((this.tokens == rhs.tokens)||((this.tokens!= null)&&this.tokens.equals(rhs.tokens))))&&((this.entity == rhs.entity)||((this.entity!= null)&&this.entity.equals(rhs.entity))));
+        return ((((this.head == rhs.head) || ((this.head != null) && this.head.equals(rhs.head))) && ((this.tokens == rhs.tokens) || ((this.tokens != null) && this.tokens.equals(rhs.tokens)))) && ((this.entity == rhs.entity) || ((this.entity != null) && this.entity.equals(rhs.entity))));
     }
 
 }

@@ -1,8 +1,7 @@
 /**
  * Misc.java
- *
+ * <p>
  * (C) 2019 by Damir Cavar
- *
  */
 
 package org.nlp_lab.jsonnlp;
@@ -15,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * Miscellaneous features, corresponding to the ConLL format
- * 
+ *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -35,8 +34,8 @@ public class Misc {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(Misc.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -54,7 +53,7 @@ public class Misc {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Misc) == false) {
+        if (!(other instanceof Misc)) {
             return false;
         }
         Misc rhs = ((Misc) other);
