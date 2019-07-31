@@ -114,18 +114,24 @@ public class DocumentsProperty {
 
     @JsonProperty("dependencymap")
     @JsonPropertyDescription("Dependency in HashMap")
-    private List<HashMap<String, List<Pair<Integer, Integer>>>> deps = new ArrayList<>();
+    private HashMap<String, List<Pair<Integer, Integer>>> deps = new HashMap<>();
 
     @JsonProperty("dependencymap")
-    public List<HashMap<String, List<Pair<Integer, Integer>>>> getDepsMap(){
+    public HashMap<String, List<Pair<Integer, Integer>>> getDepsMap(){
         return this.deps;
     }
 
     @JsonProperty("dependencymap")
-    public void addDepsMap( HashMap<String, List<Pair<Integer, Integer>>> deps){
-        this.deps.add(deps);
+    public void addMap( HashMap<String, List<Pair<Integer, Integer>>> depsfrom){
+        for(String key: depsfrom.keySet()){
+            if(this.deps.containsKey(key)){
+                this.deps.get(key).addAll(depsfrom.get(key));
+            }
+            else{
+                this.deps.put(key, depsfrom.get(key));
+            }
+        }
     }
-
 
     /**
      * Document ID
