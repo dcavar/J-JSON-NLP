@@ -1,6 +1,9 @@
 /**
  * ArcsProperty.java
+ * <p>
  * (C) 2019 by Damir Cavar
+ * <p>
+ * Semiring, Inc. code version.
  */
 
 package org.nlp_lab.jsonnlp;
@@ -29,6 +32,7 @@ public class ArcsProperty {
     @JsonProperty("lab")
     @JsonPropertyDescription("Label of the dependency.")
     private String lab;
+
     /**
      * Token Id corresponding to the governor
      * (Required)
@@ -36,12 +40,14 @@ public class ArcsProperty {
     @JsonProperty("gov")
     @JsonPropertyDescription("Token Id corresponding to the governor")
     private Integer gov;
+
     /**
      * Token Id corresponding to the dependent
      */
     @JsonProperty("dep")
     @JsonPropertyDescription("Token Id corresponding to the dependent")
     private Integer dep;
+
     /**
      * Confidence levels of a particular attribute
      */

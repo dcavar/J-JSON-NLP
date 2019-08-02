@@ -33,7 +33,9 @@ import org.javatuples.Pair;
         "dependencymap"
 })
 
-
+/**
+ *
+ */
 public class DocumentsProperty {
 
     /**
@@ -43,77 +45,85 @@ public class DocumentsProperty {
     @JsonProperty("id")
     @JsonPropertyDescription("Document ID")
     private int id;
+
     @JsonProperty("meta")
     private Meta meta;
+
     /**
-     * The unprocessed text of the document
-     *
+     * The unprocessed raw input text of the document
      */
     @JsonProperty("text")
     @JsonPropertyDescription("The unprocessed text of the document")
     private String text;
+
     /**
      * Allow for embeddings from multiple sources
-     *
      */
     @JsonProperty("embeddings")
     @JsonPropertyDescription("Allow for embeddings from multiple sources")
     private List<Embedding> embeddings = new ArrayList<>();
+
     /**
      * Linguistic features, corresponding to the ConLL format
-     *
      */
     @JsonProperty("features")
     @JsonPropertyDescription("Linguistic features, corresponding to the ConLL format")
     private Map<String, String> features = new HashMap<>();
+
     /**
      * Confidence levels of a particular attribute
-     *
      */
     @JsonProperty("scores")
     @JsonPropertyDescription("Confidence levels of a particular attribute")
     private Scores scores;
+
     /**
      * Classification labels applied to a given section
-     *
      */
     @JsonProperty("labels")
     @JsonPropertyDescription("Classification labels applied to a given section")
     private List<Label> labels = new ArrayList<>();
+
     @JsonProperty("paragraphs")
     private Map<String, ParagraphsProperty> paragraphs = new HashMap<>();
+
     @JsonProperty("sentences")
     private Map<String, SentencesProperty> sentences = new HashMap<>();
+
     @JsonProperty("clauses")
     private List<ClauseProperty> clauses;
-    ///**
-    //* A mapping of tokens objects in the document
-    //* (Required)
-    //*
-    //*/
+
+    /**
+    * A mapping of tokens objects in the document
+    * (Required)
+    */
     @JsonProperty("tokenList")
     @JsonPropertyDescription("A mapping of tokens objects in the document")
     private List<TokenListProperty> tokenList = new ArrayList<>();
+
     /**
      * Dependency graphs of any style
-     *
      */
     @JsonProperty("dependencies")
     @JsonPropertyDescription("Dependency graphs of any style")
     private Dependency dependencies;
+
     @JsonProperty("coreferences")
     private List<Coreference> coreferences = new ArrayList<>();
+
     @JsonProperty("constituents")
     private List<Constituent> constituents = new ArrayList<>();
+
     /**
      * Multi-word expressions, idioms, etc.
-     *
      */
     @JsonProperty("expressions")
     @JsonPropertyDescription("Multi-word expressions, idioms, etc.")
     private List<Expression> expressions = new ArrayList<>();
 
-
+    /**
+     *
+     */
     @JsonProperty("dependencymap")
     @JsonPropertyDescription("Dependency in HashMap")
     private HashMap<String, List<Pair<Integer, Integer>>> deps = new HashMap<>();
@@ -136,7 +146,6 @@ public class DocumentsProperty {
 
     /**
      * Document ID
-     *
      */
     @JsonProperty("id")
     public int getId() {
@@ -145,7 +154,6 @@ public class DocumentsProperty {
 
     /**
      * Document ID
-     *
      */
     @JsonProperty("id")
     public void setId(int id) {
@@ -164,7 +172,6 @@ public class DocumentsProperty {
 
     /**
      * The unprocessed text of the document
-     *
      */
     @JsonProperty("text")
     public String getText() {
@@ -173,7 +180,6 @@ public class DocumentsProperty {
 
     /**
      * The unprocessed text of the document
-     *
      */
     @JsonProperty("text")
     public void setText(String text) {
@@ -182,7 +188,6 @@ public class DocumentsProperty {
 
     /**
      * Allow for embeddings from multiple sources
-     *
      */
     @JsonProperty("embeddings")
     public List<Embedding> getEmbeddings() {
@@ -191,7 +196,6 @@ public class DocumentsProperty {
 
     /**
      * Allow for embeddings from multiple sources
-     *
      */
     @JsonProperty("embeddings")
     public void setEmbeddings(List<Embedding> embeddings) {
@@ -200,7 +204,6 @@ public class DocumentsProperty {
 
     /**
      * Linguistic features, corresponding to the ConLL format
-     *
      */
     @JsonProperty("features")
     public Map<String, String> getFeatures() {
@@ -209,7 +212,6 @@ public class DocumentsProperty {
 
     /**
      * Linguistic features, corresponding to the ConLL format
-     *
      */
     @JsonProperty("features")
     public void setFeatures(Map<String, String> features) {
@@ -218,7 +220,6 @@ public class DocumentsProperty {
 
     /**
      * Confidence levels of a particular attribute
-     *
      */
     @JsonProperty("scores")
     public Scores getScores() {
@@ -236,7 +237,6 @@ public class DocumentsProperty {
 
     /**
      * Classification labels applied to a given section
-     *
      */
     @JsonProperty("labels")
     public List<Label> getLabels() {
@@ -245,7 +245,6 @@ public class DocumentsProperty {
 
     /**
      * Classification labels applied to a given section
-     *
      */
     @JsonProperty("labels")
     public void setLabels(List<Label> labels) {
@@ -285,7 +284,6 @@ public class DocumentsProperty {
     /**
      * A mapping of tokens objects in the document
      * (Required)
-     *
      */
     @JsonProperty("tokenList")
     public List<TokenListProperty> getTokenList() {
@@ -295,7 +293,6 @@ public class DocumentsProperty {
     /**
      * A mapping of tokens objects in the document
      * (Required)
-     *
      */
     @JsonProperty("tokenList")
     public void setTokenList(List<TokenListProperty> tokenList) {
@@ -304,7 +301,6 @@ public class DocumentsProperty {
 
     /**
      * Dependency graphs of any style
-     *
      */
     @JsonProperty("dependencies")
     public Dependency getDependencies() {
@@ -313,7 +309,6 @@ public class DocumentsProperty {
 
     /**
      * Dependency graphs of any style
-     *
      */
     @JsonProperty("dependencies")
     public void setDependencies(Dependency dependencies) {

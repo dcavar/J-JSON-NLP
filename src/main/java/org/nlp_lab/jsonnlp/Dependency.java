@@ -29,14 +29,13 @@ public class Dependency {
     /**
      *
      * (Required)
-     *
      */
     @JsonProperty("style")
-    private String style;
+    private List<String> styles;
+
     /**
      * A mapping of dependent token id to a list of governors
      * (Required)
-     *
      */
     @JsonProperty("trees")
     @JsonPropertyDescription("A mapping of dependent token id to a list of governors")
@@ -46,27 +45,51 @@ public class Dependency {
     /**
      *
      * (Required)
-     *
      */
     @JsonProperty("style")
-    public String getStyle() {
-        return style;
+    public List<String> getStyle() {
+        return styles;
     }
 
     /**
      *
      * (Required)
-     *
      */
     @JsonProperty("style")
-    public void setStyle(String style) {
-        this.style = style;
+    public void setStyle(List<String> style) {
+        this.styles = style;
+    }
+
+    /**
+     *
+     * (Required)
+     */
+    public int getStyleID(String style) {
+        return this.styles.indexOf(style);
+    }
+
+    /**
+     *
+     * @param pos
+     * @return
+     */
+    public String getStyleLabel(int pos) {
+        return this.styles.get(pos);
+    }
+
+    /**
+     *
+     * @param t
+     * @param style
+     */
+    public void addTree(List<ArcsProperty> t, String style) {
+        this.trees.add(t);
+        this.styles.add(style);
     }
 
     /**
      * A mapping of dependent token id to a list of governors
      * (Required)
-     *
      */
     @JsonProperty("arcs")
     public List<List<ArcsProperty>> getTrees() {
@@ -83,13 +106,40 @@ public class Dependency {
         this.trees = trees;
     }
 
+    /**
+     * returns a dependency tree at some position in the list
+     *
+     * @param pos
+     * @return
+     */
+    public List<ArcsProperty> getTree(int pos) {
+        if (-1 < pos && pos < this.trees.size()) {
+            return this.trees.get(pos);
+        }
+        return new ArrayList<ArcsProperty>();
+    }
+
+    /**
+     * returns the dependency tree that corresponds to a style label
+     *
+     * @param style
+     * @return
+     */
+    public List<ArcsProperty> getTree(String style) {
+        int id = this.getStyleID(style);
+        if (id > -1) {
+            return this.trees.get(id);
+        }
+        return new ArrayList<ArcsProperty>();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(Dependency.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("style");
         sb.append('=');
-        sb.append(((this.style == null) ? "<null>" : this.style));
+        sb.append(((this.styles == null) ? "<null>" : this.styles));
         sb.append(',');
         sb.append("trees");
         sb.append('=');
@@ -107,7 +157,7 @@ public class Dependency {
     public int hashCode() {
         int result = 1;
         result = ((result * 31) + ((this.trees == null) ? 0 : this.trees.hashCode()));
-        return ((result * 31) + ((this.style == null) ? 0 : this.style.hashCode()));
+        return ((result * 31) + ((this.styles == null) ? 0 : this.styles.hashCode()));
         //return result;
     }
 
@@ -117,7 +167,7 @@ public class Dependency {
         if (!(other instanceof Dependency)) return false;
 
         Dependency rhs = ((Dependency) other);
-        return (((this.trees == rhs.trees) || ((this.trees != null) && this.trees.equals(rhs.trees))) && ((this.style == rhs.style) || ((this.style != null) && this.style.equals(rhs.style))));
+        return (((this.trees == rhs.trees) || ((this.trees != null) && this.trees.equals(rhs.trees))) && ((this.styles == rhs.styles) || ((this.styles != null) && this.styles.equals(rhs.styles))));
     }
 
 }
