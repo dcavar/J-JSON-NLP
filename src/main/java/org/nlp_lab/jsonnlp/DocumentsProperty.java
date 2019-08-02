@@ -106,7 +106,7 @@ public class DocumentsProperty {
      */
     @JsonProperty("dependencies")
     @JsonPropertyDescription("Dependency graphs of any style")
-    private Dependency dependencies;
+    private List<Dependency> dependencies;
 
     @JsonProperty("coreferences")
     private List<Coreference> coreferences = new ArrayList<>();
@@ -121,28 +121,6 @@ public class DocumentsProperty {
     @JsonPropertyDescription("Multi-word expressions, idioms, etc.")
     private List<Expression> expressions = new ArrayList<>();
 
-    /**
-     *
-     */
-    @JsonProperty("dependencymap")
-    @JsonPropertyDescription("Dependency in HashMap")
-    private HashMap<String, List<Pair<Integer, Integer>>> deps = new HashMap<>();
-
-    @JsonProperty("dependencymap")
-    public HashMap<String, List<Pair<Integer, Integer>>> getDepsMap() {
-        return this.deps;
-    }
-
-    @JsonProperty("dependencymap")
-    public void addMap(HashMap<String, List<Pair<Integer, Integer>>> depsfrom) {
-        for (String key : depsfrom.keySet()) {
-            if (this.deps.containsKey(key)) {
-                this.deps.get(key).addAll(depsfrom.get(key));
-            } else {
-                this.deps.put(key, depsfrom.get(key));
-            }
-        }
-    }
 
     /**
      * Document ID
@@ -303,7 +281,7 @@ public class DocumentsProperty {
      * Dependency graphs of any style
      */
     @JsonProperty("dependencies")
-    public Dependency getDependencies() {
+    public List<Dependency> getDependencies() {
         return dependencies;
     }
 
@@ -311,7 +289,7 @@ public class DocumentsProperty {
      * Dependency graphs of any style
      */
     @JsonProperty("dependencies")
-    public void setDependencies(Dependency dependencies) {
+    public void setDependencies(List<Dependency> dependencies) {
         this.dependencies = dependencies;
     }
 
