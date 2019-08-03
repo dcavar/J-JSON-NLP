@@ -106,7 +106,7 @@ public class DocumentsProperty {
      */
     @JsonProperty("dependencies")
     @JsonPropertyDescription("Dependency graphs of any style")
-    private List<Dependency> dependencies;
+    private List<Dependency> dependencies = new ArrayList<>();
 
     @JsonProperty("coreferences")
     private List<Coreference> coreferences = new ArrayList<>();
