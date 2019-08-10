@@ -1,4 +1,4 @@
-/**
+/*
  * Scores.java
  * <p>
  * (C) 2019 by Damir Cavar

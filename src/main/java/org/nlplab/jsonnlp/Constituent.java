@@ -1,7 +1,8 @@
-/**
+/*
  * Constituent.java
  * (C) 2019 by Damir Cavar
  */
+
 package org.nlplab.jsonnlp;
 
 import java.util.ArrayList;
@@ -136,8 +137,9 @@ public class Constituent {
     }
 
     /**
+     * Returns the labeled bracketing tree annotation with enumerated nodes.
      *
-     * @param enumeratedLabeledBracketing
+     * @param enumeratedLabeledBracketing the labeled bracketing tree with enumerated nodes.
      */
     @JsonProperty("enumeratedLabeledBracketing")
     public void setEnumeratedLabeledBracketing(String enumeratedLabeledBracketing) {
@@ -146,7 +148,7 @@ public class Constituent {
 
     /**
      *
-     * @return
+     * @return list of Node objects.
      */
     @JsonProperty("nodes")
     public List<Node> getNodes() {
@@ -155,7 +157,7 @@ public class Constituent {
 
     /**
      *
-     * @param nodes
+     * @param nodes a list of Node objects.
      */
     @JsonProperty("nodes")
     public void setNodes(List<Node> nodes) {
@@ -164,7 +166,7 @@ public class Constituent {
 
     /**
      *
-     * @return
+     * @return the string representation of the object.
      */
     @Override
     public String toString() {
@@ -200,7 +202,7 @@ public class Constituent {
 
     /**
      *
-     * @return
+     * @return the hashCode for maps.
      */
     @Override
     public int hashCode() {
@@ -215,8 +217,8 @@ public class Constituent {
 
     /**
      *
-     * @param other
-     * @return
+     * @param other an object to compare with.
+     * @return true or false.
      */
     @Override
     public boolean equals(Object other) {

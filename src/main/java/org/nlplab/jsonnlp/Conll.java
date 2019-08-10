@@ -1,9 +1,10 @@
-/**
+/*
  * Conll.java
  * (C) 2019 by Damir Cavar
  *
  * NLP-Lab code version.
  */
+
 package org.nlplab.jsonnlp;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -20,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
         "sentence_ids"
 })
+
 public class Conll {
 
     /**

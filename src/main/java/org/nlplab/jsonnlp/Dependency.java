@@ -1,4 +1,4 @@
-/**
+/*
  * Dependency.java
  * <p>
  * (C) 2019 by Damir Cavar
@@ -67,8 +67,8 @@ public class Dependency {
 
     /**
      *
-     * @param t
-     * @param style
+     * @param t a list of ArcsProperty objects
+     * @param style the style
      */
     public void addTree(List<ArcsProperty> t, String style) {
         this.tree = t;
@@ -102,7 +102,7 @@ public class Dependency {
 
     /**
      *
-     * @return
+     * @return a Map of dependency labels and a Pair of governor and dependent token ids.
      */
     @JsonProperty("dependencymap")
     public HashMap<String, List<Pair<Integer, Integer>>> getDepsMap() {
@@ -111,7 +111,7 @@ public class Dependency {
 
     /**
      *
-     * @param depsfrom
+     * @param depsfrom a Map of dependency labels and a Pair of governor and dependent token ids.
      */
     @JsonProperty("dependencymap")
     public void setDepsMap(HashMap<String, List<Pair<Integer, Integer>>> depsfrom) {

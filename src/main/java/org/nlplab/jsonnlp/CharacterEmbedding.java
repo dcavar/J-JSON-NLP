@@ -1,4 +1,4 @@
-/**
+/*
  * CharacterEmbedding.java
  * (C) 2019 by Damir Cavar
  *
