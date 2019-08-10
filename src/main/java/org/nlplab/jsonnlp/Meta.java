@@ -2,7 +2,10 @@
  * Meta.java
  * <p>
  * (C) 2019 by Damir Cavar
+ *
+ * NLP-Lab code base.
  */
+
 package org.nlplab.jsonnlp;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,6 +34,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "DC.rights",
         "counts"
 })
+
 public class Meta {
 
     /**

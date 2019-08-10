@@ -2,7 +2,10 @@
  * Frames.java
  * <p>
  * (C) 2019 by Damir Cavar
+ *
+ * NLP-Lab code version.
  */
+
 package org.nlplab.jsonnlp;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,10 +16,13 @@ import java.util.List;
 public class Frames {
     @JsonProperty("name")
     private String name;
+
     @JsonProperty("frameId")
     private int frameId;
+
     @JsonProperty("definition")
     private String definition;
+
     @JsonProperty("lu")
     private List<Lu> lu = new ArrayList<>();
 
