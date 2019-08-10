@@ -14,12 +14,14 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "scores",
         "sentenceId",
         "labeledBracketing",
         "enumeratedLabeledBracketing",
-        "nodes"
+        "nodes",
+        "scores"
 })
+
+
 public class Constituent {
 
     /**
@@ -29,6 +31,7 @@ public class Constituent {
     @JsonProperty("scores")
     @JsonPropertyDescription("Confidence levels of a particular attribute")
     private Scores scores;
+
     /**
      *
      * (Required)
@@ -36,6 +39,7 @@ public class Constituent {
      */
     @JsonProperty("sentenceId")
     private Integer sentenceId;
+
     /**
      *
      * (Required)
@@ -43,8 +47,10 @@ public class Constituent {
      */
     @JsonProperty("labeledBracketing")
     private String labeledBracketing;
+
     @JsonProperty("enumeratedLabeledBracketing")
     private String enumeratedLabeledBracketing;
+
     @JsonProperty("nodes")
     private List<Node> nodes = new ArrayList<>();
 
@@ -106,6 +112,12 @@ public class Constituent {
         this.labeledBracketing = labeledBracketing;
     }
 
+    /**
+     * Adds a labeled bracketing parse tree including its probability.
+     *
+     * @param nlb the labeled bracketing parse tree.
+     * @param probability the probability of this parse tree.
+     */
     public void addLabeledBracketing(String nlb, double probability) {
         this.labeledBracketing = nlb;
         Scores newScore = new Scores();
@@ -113,26 +125,47 @@ public class Constituent {
         this.scores = newScore;
     }
 
+    /**
+     * returns the enumerated bracketing parse string.
+     *
+     * @return the labeled bracketing parse string with enumerated tree nodes.
+     */
     @JsonProperty("enumeratedLabeledBracketing")
     public String getEnumeratedLabeledBracketing() {
         return enumeratedLabeledBracketing;
     }
 
+    /**
+     *
+     * @param enumeratedLabeledBracketing
+     */
     @JsonProperty("enumeratedLabeledBracketing")
     public void setEnumeratedLabeledBracketing(String enumeratedLabeledBracketing) {
         this.enumeratedLabeledBracketing = enumeratedLabeledBracketing;
     }
 
+    /**
+     *
+     * @return
+     */
     @JsonProperty("nodes")
     public List<Node> getNodes() {
         return nodes;
     }
 
+    /**
+     *
+     * @param nodes
+     */
     @JsonProperty("nodes")
     public void setNodes(List<Node> nodes) {
         this.nodes = nodes;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -165,6 +198,10 @@ public class Constituent {
         return sb.toString();
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int result = 1;
@@ -176,6 +213,11 @@ public class Constituent {
         return result;
     }
 
+    /**
+     *
+     * @param other
+     * @return
+     */
     @Override
     public boolean equals(Object other) {
         if (other == this) {

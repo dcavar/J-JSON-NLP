@@ -3,7 +3,7 @@
  * <p>
  * (C) 2019 by Damir Cavar
  * <p>
- * Semiring, Inc. code version.
+ * NLP-Lab code version.
  */
 
 package org.nlplab.jsonnlp;

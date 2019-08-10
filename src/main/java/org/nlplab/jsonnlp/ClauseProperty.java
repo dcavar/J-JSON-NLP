@@ -1,6 +1,8 @@
 /**
  * ClauseProperty.java
  * (C) 2019 by Damir Cavar, Anurag Kumar
+ *
+ * NLP-Lab code version.
  */
 
 package org.nlplab.jsonnlp;
