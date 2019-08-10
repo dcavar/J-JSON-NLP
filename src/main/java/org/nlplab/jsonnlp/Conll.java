@@ -2,7 +2,7 @@
  * Conll.java
  * (C) 2019 by Damir Cavar
  */
-package org.nlp_lab.jsonnlp;
+package org.nlplab.jsonnlp;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

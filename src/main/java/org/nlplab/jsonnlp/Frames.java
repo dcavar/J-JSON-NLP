@@ -1,19 +1,24 @@
 /**
- * Lu.java
+ * Frames.java
  * <p>
  * (C) 2019 by Damir Cavar
  */
-package org.nlp_lab.jsonnlp;
+package org.nlplab.jsonnlp;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Lu {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Frames {
     @JsonProperty("name")
     private String name;
+    @JsonProperty("frameId")
+    private int frameId;
     @JsonProperty("definition")
     private String definition;
-    @JsonProperty("pos")
-    private String pos;
+    @JsonProperty("lu")
+    private List<Lu> lu = new ArrayList<>();
 
     @JsonProperty("name")
     public String getName() {
@@ -25,14 +30,14 @@ public class Lu {
         this.name = name;
     }
 
-    @JsonProperty("pos")
-    public String getPos() {
-        return pos;
+    @JsonProperty("frameId")
+    public int getFrameId() {
+        return frameId;
     }
 
-    @JsonProperty("pos")
-    public void setPos(String pos) {
-        this.pos = pos;
+    @JsonProperty("frameId")
+    public void setFrameId(int frameId) {
+        this.frameId = frameId;
     }
 
     @JsonProperty("definition")
@@ -45,5 +50,13 @@ public class Lu {
         this.definition = definition;
     }
 
+    @JsonProperty("lu")
+    public List<Lu> getLu() {
+        return lu;
+    }
 
+    @JsonProperty("lu")
+    public void setLu(List<Lu> lu) {
+        this.lu = lu;
+    }
 }

@@ -5,7 +5,7 @@
  */
 
 
-package org.nlp_lab.jsonnlp;
+package org.nlplab.jsonnlp;
 
 import java.util.LinkedHashSet;
 import java.util.Set;

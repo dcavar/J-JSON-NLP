@@ -5,7 +5,7 @@
  */
 
 
-package org.nlp_lab.jsonnlp;
+package org.nlplab.jsonnlp;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -29,7 +29,7 @@ public class Scores {
      */
     @JsonProperty("upos")
     @JsonPropertyDescription("Universal part of speech tag probability")
-    private double upos;
+    public double upos;
 
     /**
      * Language-specific part of speech tag probability
@@ -37,7 +37,7 @@ public class Scores {
      */
     @JsonProperty("xpos")
     @JsonPropertyDescription("Language-specific part of speech tag probability")
-    private double xpos;
+    public double xpos;
 
     /**
      * The Named Entity Tag Probability
@@ -45,7 +45,15 @@ public class Scores {
      */
     @JsonProperty("entity")
     @JsonPropertyDescription("The Named Entity Tag Probability")
-    private double entity;
+    public double entity;
+
+    /**
+     * General probability
+     *
+     */
+    @JsonProperty("prob")
+    @JsonPropertyDescription("General probability")
+    public double prob;
 
     /**
      * The Wordnet_ID probability
@@ -53,7 +61,7 @@ public class Scores {
      */
     @JsonProperty("wordnetId")
     @JsonPropertyDescription("The Wordnet_ID probability")
-    private double wordnetId;
+    public double wordnetId;
 
     /**
      * The sentiment label probability
@@ -69,7 +77,7 @@ public class Scores {
      */
     @JsonProperty("type")
     @JsonPropertyDescription("The expression type probability")
-    private double type;
+    public double type;
 
     @Override
     public String toString() {

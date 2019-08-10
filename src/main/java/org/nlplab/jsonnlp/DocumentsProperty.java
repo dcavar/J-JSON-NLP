@@ -3,7 +3,7 @@
  * <p>
  * (C) 2019 by Damir Cavar
  */
-package org.nlp_lab.jsonnlp;
+package org.nlplab.jsonnlp;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.*;
-import org.javatuples.Pair;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({

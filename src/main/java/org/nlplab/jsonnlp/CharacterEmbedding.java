@@ -3,7 +3,7 @@
  * (C) 2019 by Damir Cavar
  */
 
-package org.nlp_lab.jsonnlp;
+package org.nlplab.jsonnlp;
 
 import java.util.ArrayList;
 import java.util.List;
