@@ -106,6 +106,13 @@ public class Constituent {
         this.labeledBracketing = labeledBracketing;
     }
 
+    public void addLabeledBracketing(String nlb, double probability) {
+        this.labeledBracketing = nlb;
+        Scores newScore = new Scores();
+        newScore.prob = probability;
+        this.scores = newScore;
+    }
+
     @JsonProperty("enumeratedLabeledBracketing")
     public String getEnumeratedLabeledBracketing() {
         return enumeratedLabeledBracketing;
