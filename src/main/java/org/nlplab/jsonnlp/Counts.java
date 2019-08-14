@@ -1,8 +1,11 @@
-/**
+/*
  * Counts.java
  * <p>
  * (C) 2019 by Damir Cavar
+ *
+ * NLP-Lab code version.
  */
+
 package org.nlplab.jsonnlp;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -18,18 +21,25 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "documents",
         "entities"
 })
+
+
 public class Counts {
 
     @JsonProperty("tokens")
     private Integer tokens;
+
     @JsonProperty("sentences")
     private Integer sentences;
+
     @JsonProperty("clauses")
     private Integer clauses;
+
     @JsonProperty("paragraphs")
     private Integer paragraphs;
+
     @JsonProperty("documents")
     private Integer documents;
+
     @JsonProperty("entities")
     private Integer entities;
 

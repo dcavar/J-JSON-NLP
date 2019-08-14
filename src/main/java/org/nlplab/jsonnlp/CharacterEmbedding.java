@@ -1,6 +1,8 @@
-/**
+/*
  * CharacterEmbedding.java
  * (C) 2019 by Damir Cavar
+ *
+ * NLP-Lab code version.
  */
 
 package org.nlplab.jsonnlp;

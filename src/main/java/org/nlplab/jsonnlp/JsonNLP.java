@@ -1,5 +1,9 @@
-/**
+/*
+ * JsonNLP.java
  *
+ * (C) 2019 by Damir Cavar
+ *
+ * NLP-Lab code version.
  */
 
 package org.nlplab.jsonnlp;
@@ -17,7 +21,6 @@ import java.util.List;
  * The JSON-NLP Schema
  * <p>
  *
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -25,6 +28,7 @@ import java.util.List;
         "conll",
         "documents"
 })
+
 public class JsonNLP {
 
     @JsonProperty("meta")

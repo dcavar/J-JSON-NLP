@@ -1,8 +1,11 @@
-/**
+/*
  * Expression.java
  * <p>
  * (C) 2019 by Damir Cavar
+ *
+ * NLP-Lab code version.
  */
+
 package org.nlplab.jsonnlp;
 
 import java.util.ArrayList;
@@ -23,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "dependency",
         "scores"
 })
+
 public class Expression {
 
     @JsonProperty("id")
