@@ -39,7 +39,7 @@ public class Dependency {
      * A mapping of dependent token id to a list of governors
      * (Required)
      */
-    @JsonProperty("tree")
+    @JsonProperty("trees")
     @JsonPropertyDescription("A mapping of dependent token id to a list of governors")
     //private Map<String, List<ArcsProperty>> arcs = new HashMap<>();
     private List<ArcsProperty> tree = new ArrayList<>();
@@ -68,7 +68,7 @@ public class Dependency {
      * @param t
      * @param style
      */
-    public void addTree(List<ArcsProperty> t, String style) {
+    public void addnewTree(List<ArcsProperty> t, String style) {
         this.tree = t;
         this.style = style;
     }
