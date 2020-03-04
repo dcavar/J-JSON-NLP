@@ -8,7 +8,7 @@
     <name>JSON-NLP</name>
     <url>http://maven.apache.org</url>
     <properties>
-		<jackson.version>2.9.8</jackson.version>
+		<jackson.version>2.10.3</jackson.version>
 		<maven.compiler.target>12</maven.compiler.target>
 		<maven.compiler.source>12</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
